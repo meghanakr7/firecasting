@@ -1,0 +1,25 @@
+[{
+  "id" : "1jepv8",
+  "name" : "fc_train_data_preprocess",
+  "description" : null,
+  "code" : "# Step 1: read and prepare the txt files by yunyao\n\nimport os\nimport pandas as pd\n\n# Folder path containing the text files\nfolder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files\n\ndef read_original_txt_files():\n  # Specify chunk size\n  #chunk_size = 1000\n  row_limit = 1000\n\n  # Initialize an empty DataFrame\n  df_list = []\n  total_rows = 0\n\n  # Traverse through files in the folder\n  for filename in os.listdir(folder_path):\n      if filename.endswith('.txt'):\n          file_path = os.path.join(folder_path, filename)\n          file_df = pd.read_csv(file_path)  # Adjust separator if needed\n          #for chunk in chunk_generator:\n          df_list.append(file_df)\n          total_rows += len(file_df)\n\n          if total_rows >= row_limit:\n              break  # Stop reading files if row limit is reached\n\n  # Concatenate all chunks into a single DataFrame\n  final_df = pd.concat(df_list, ignore_index=True)\n\n  # Display the DataFrame\n  print(final_df)\n  return final_df\n\n# target column is current day's FRP, previous days' FRP and all the other columns are inputs\n\n#read_original_txt_files()\n\n",
+  "lang" : "python",
+  "owner" : "111111",
+  "confidential" : "FALSE"
+},{
+  "id" : "w4lpt8",
+  "name" : "fc_model_creation",
+  "description" : null,
+  "code" : "# create a ML model for wildfire emission forecasting\n\nimport pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error\nimport warnings\n\nfrom fc_train_data_preprocess import read_original_txt_files\n\n# Suppress the specific warning\nwarnings.filterwarnings(\"ignore\", message=\"DataFrame is highly fragmented\")\n\n\n# Assuming 'target' is the column to predict\ntarget_col = ' FRP'\n\nprint(\"read the txt files into python dataframes\")\ndf = read_original_txt_files()\n# Lag/Shift the data for previous days' information\nnum_previous_days = 7  # Adjust the number of previous days to consider\nfor i in range(1, num_previous_days + 1):\n    for col in df.columns:\n        df[f'{col}_lag_{i}'] = df[col].shift(i)\n\n# Drop rows with NaN values from the shifted columns\ndf.dropna(inplace=True)\n\n# Define features and target\nprint(\"current all columns: \", df.columns)\nX = df.drop([target_col], axis=1)\ny = df[target_col]\n\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)\n\n# Standardize the features - not sure about this\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)\n\n# Initialize and train a model (e.g., Linear Regression)\nmodel = XGBRegressor(n_estimators=100, max_depth=5, learning_rate=0.1)\nmodel.fit(X_train_scaled, y_train)\n\n# Make predictions\ny_pred = model.predict(X_test_scaled)\n\n# Calculate Mean Squared Error\nmse = mean_squared_error(y_test, y_pred)\nprint(f\"Mean Squared Error: {mse}\")\n\n",
+  "lang" : "python",
+  "owner" : "111111",
+  "confidential" : "FALSE"
+},{
+  "id" : "521ngk",
+  "name" : "fc_test_data_preparation",
+  "description" : "python",
+  "code" : "#  prepare testing data for the wildfire emission forecasting\n\n\n",
+  "lang" : "python",
+  "owner" : "111111",
+  "confidential" : "FALSE"
+}]

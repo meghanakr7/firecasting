@@ -1,0 +1,61 @@
+[{
+  "history_id" : "uIirCsfUJVXt",
+  "history_input" : "# Step 1: read and prepare the txt files by yunyao\n\nimport os\nimport pandas as pd\n\n# Folder path containing the text files\nfolder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files\n\ndef read_original_txt_files():\n  # Specify chunk size\n  #chunk_size = 1000\n  row_limit = 1000\n\n  # Initialize an empty DataFrame\n  df_list = []\n  total_rows = 0\n\n  # Traverse through files in the folder\n  for filename in os.listdir(folder_path):\n      if filename.endswith('.txt'):\n          file_path = os.path.join(folder_path, filename)\n          file_df = pd.read_csv(file_path)  # Adjust separator if needed\n          #for chunk in chunk_generator:\n          df_list.append(file_df)\n          total_rows += len(file_df)\n\n          if total_rows >= row_limit:\n              break  # Stop reading files if row limit is reached\n\n  # Concatenate all chunks into a single DataFrame\n  final_df = pd.concat(df_list, ignore_index=True)\n\n  # Display the DataFrame\n  print(final_df)\n  return final_df\n\n# target column is current day's FRP, previous days' FRP and all the other columns are inputs\n\nread_original_txt_files()\n\n",
+  "history_output" : "         LAT         LON   FRP         FWI  ...   RAIN   CAPE          ST       SM\n0       24.5 -126.000000   0.0 -999.000000  ...    0.0  17.50 -999.000000 -999.000\n1       24.5 -125.899994   0.0 -999.000000  ...    0.0  17.50 -999.000000 -999.000\n2       24.5 -125.800003   0.0 -999.000000  ...    0.0  18.00 -999.000000 -999.000\n3       24.5 -125.699997   0.0 -999.000000  ...    0.0  18.00 -999.000000 -999.000\n4       24.5 -125.599998   0.0 -999.000000  ...    0.0  17.75 -999.000000 -999.000\n...      ...         ...   ...         ...  ...    ...    ...         ...      ...\n156856  50.5  -66.400002   0.0    0.003906  ...    0.0   0.00  268.872772    0.427\n156857  50.5  -66.299995   0.0    0.003906  ...    0.0   0.00  269.452759    0.427\n156858  50.5  -66.199997   0.0    0.003906  ...    0.0   0.00  269.452759    0.427\n156859  50.5  -66.099998   0.0    0.003906  ...    0.0   0.00  269.645264    0.432\n156860  50.5  -66.000000   0.0    0.003906  ...    0.0   0.00  269.645264    0.432\n[156861 rows x 15 columns]\n",
+  "history_begin_time" : 1692389141357,
+  "history_end_time" : 1692389142433,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "TJPXbyVw8PsC",
+  "history_input" : "# Step 1: read and prepare the txt files by yunyao\n\nimport os\nimport pandas as pd\n\n# Folder path containing the text files\nfolder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files\n\n# Specify chunk size\n#chunk_size = 1000\nrow_limit = 1000\n\n# Initialize an empty DataFrame\ndf_list = []\ntotal_rows = 0\n\n# Traverse through files in the folder\nfor filename in os.listdir(folder_path):\n    if filename.endswith('.txt'):\n        file_path = os.path.join(folder_path, filename)\n        file_df = pd.read_csv(file_path)  # Adjust separator if needed\n        #for chunk in chunk_generator:\n        df_list.append(file_df)\n        total_rows += len(file_df)\n            \n        if total_rows >= row_limit:\n            break  # Stop reading files if row limit is reached\n\n# Concatenate all chunks into a single DataFrame\nfinal_df = pd.concat(df_list, ignore_index=True)\n\n# Display the DataFrame\nprint(final_df)\n\n",
+  "history_output" : "         LAT         LON   FRP         FWI  ...   RAIN   CAPE          ST       SM\n0       24.5 -126.000000   0.0 -999.000000  ...    0.0  17.50 -999.000000 -999.000\n1       24.5 -125.899994   0.0 -999.000000  ...    0.0  17.50 -999.000000 -999.000\n2       24.5 -125.800003   0.0 -999.000000  ...    0.0  18.00 -999.000000 -999.000\n3       24.5 -125.699997   0.0 -999.000000  ...    0.0  18.00 -999.000000 -999.000\n4       24.5 -125.599998   0.0 -999.000000  ...    0.0  17.75 -999.000000 -999.000\n...      ...         ...   ...         ...  ...    ...    ...         ...      ...\n156856  50.5  -66.400002   0.0    0.003906  ...    0.0   0.00  268.872772    0.427\n156857  50.5  -66.299995   0.0    0.003906  ...    0.0   0.00  269.452759    0.427\n156858  50.5  -66.199997   0.0    0.003906  ...    0.0   0.00  269.452759    0.427\n156859  50.5  -66.099998   0.0    0.003906  ...    0.0   0.00  269.645264    0.432\n156860  50.5  -66.000000   0.0    0.003906  ...    0.0   0.00  269.645264    0.432\n[156861 rows x 15 columns]\n",
+  "history_begin_time" : 1692388854150,
+  "history_end_time" : 1692388855105,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "pnFIONXE1o17",
+  "history_input" : "# Step 1: read and prepare the txt files by yunyao\n\nimport os\nimport pandas as pd\n\n# Folder path containing the text files\nfolder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files\n\n# Specify chunk size\n#chunk_size = 1000\nrow_limit = 1000\n\n# Initialize an empty DataFrame\ndf_list = []\ntotal_rows = 0\n\n# Traverse through files in the folder\nfor filename in os.listdir(folder_path):\n    if filename.endswith('.txt'):\n        file_path = os.path.join(folder_path, filename)\n        file_df = pd.read_csv(file_path)  # Adjust separator if needed\n        #for chunk in chunk_generator:\n        df_list.append(file_df)\n            \n        if total_rows >= row_limit:\n            break  # Stop reading files if row limit is reached\n\n# Concatenate all chunks into a single DataFrame\nfinal_df = pd.concat(df_list, ignore_index=True)\n\n# Display the DataFrame\nprint(final_df)\n\n",
+  "history_output" : "",
+  "history_begin_time" : 1692388808743,
+  "history_end_time" : 1692388820056,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : null,
+  "indicator" : "Failed"
+},{
+  "history_id" : "nuUPUEVvjYxO",
+  "history_input" : "# Step 1: read and prepare the txt files by yunyao\n\nimport os\nimport pandas as pd\n\n# Folder path containing the text files\nfolder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files\n\n# Specify chunk size\nchunk_size = 1000\nrow_limit = 10000\n\n# Initialize an empty DataFrame\ndf_list = []\ntotal_rows = 0\n\n# Traverse through files in the folder\nfor filename in os.listdir(folder_path):\n    if filename.endswith('.txt'):\n        file_path = os.path.join(folder_path, filename)\n        chunk_generator = pd.read_csv(file_path, chunksize=chunk_size, sep='\\t')  # Adjust separator if needed\n        for chunk in chunk_generator:\n            df_list.append(chunk)\n            \n        if total_rows >= row_limit:\n            break  # Stop reading files if row limit is reached\n\n# Concatenate all chunks into a single DataFrame\nfinal_df = pd.concat(df_list, ignore_index=True)\n\n# Display the DataFrame\nprint(final_df)\n\n",
+  "history_output" : "",
+  "history_begin_time" : 1692388740292,
+  "history_end_time" : 1692388761795,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : null,
+  "indicator" : "Failed"
+},{
+  "history_id" : "D1b9j5aPl3FK",
+  "history_input" : "# Step 1: read and prepare the txt files by yunyao\n\nimport os\nimport pandas as pd\n\n# Folder path containing the text files\nfolder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files\n\n# Specify chunk size\nchunk_size = 1000\n\n# Initialize an empty DataFrame\ndf_list = []\n\n# Traverse through files in the folder\nfor filename in os.listdir(folder_path):\n    if filename.endswith('.txt'):\n        file_path = os.path.join(folder_path, filename)\n        chunk_generator = pd.read_csv(file_path, chunksize=chunk_size, sep='\\t')  # Adjust separator if needed\n        for chunk in chunk_generator:\n            df_list.append(chunk)\n\n# Concatenate all chunks into a single DataFrame\nfinal_df = pd.concat(df_list, ignore_index=True)\n\n# Display the DataFrame\nprint(final_df)\n\n",
+  "history_output" : "",
+  "history_begin_time" : 1692388623121,
+  "history_end_time" : 1692388672134,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : null,
+  "indicator" : "Failed"
+},{
+  "history_id" : "rl5na3bfwzr",
+  "history_input" : "# Write first python in Geoweaver",
+  "history_output" : "",
+  "history_begin_time" : 1692388306774,
+  "history_end_time" : 1692388310312,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : "100001",
+  "indicator" : "Done"
+},]

@@ -1,0 +1,9 @@
+{
+  "id" : "53v0w9n36eox9gr1v62a",
+  "name" : "firecasting",
+  "description" : "this workflow contains the full stack steps for training, testing, and use the Ml-based fire forecasting model.",
+  "owner" : "111111",
+  "confidential" : "FALSE",
+  "edges" : "[]",
+  "nodes" : "[{\"title\":\"fc_train_data_preprocess\",\"id\":\"1jepv8-pN2Lw\",\"x\":220.5,\"y\":178,\"color\":\"white\"},{\"title\":\"fc_model_creation\",\"id\":\"w4lpt8-33MCV\",\"x\":510.5,\"y\":174,\"color\":\"white\"},{\"title\":\"fc_test_data_preparation\",\"id\":\"521ngk-WVVPT\",\"x\":245.5,\"y\":527,\"color\":\"white\"}]"
+}
