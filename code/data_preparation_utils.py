@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 # Folder path containing the text files
 folder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files
 my_file_path = "/groups/ESS3/zsun/firecasting/data/others/"
-grid_to_window_mapper_csv = f"{my_file_path}/grid_cell_nearest_neight_mapper.csv"
+grid_to_window_mapper_csv = f"{my_file_path}/grid_cell_fixed_order_mapper.csv"
 training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/"
 
 
@@ -54,6 +54,22 @@ def create_grid_to_window_mapper(the_folder_path = folder_path):
     nearest_24 = indices[:, 1:]
     print("nearest_24 = ", nearest_24)
     print("nearest_24.shape = ", nearest_24.shape)
+    
+    clockwise_indices = []
+    for neighbor_indices in nearest_24:
+      # Calculate angle of each neighbor with respect to current cell
+      angles = []
+      for neighbor_index in neighbor_indices[1:]:
+        neighbor_coords = unique_pairs_df.iloc[neighbor_index]
+        neighbor_coords[' LAT']
+        cell_coords[' LON']
+
+        # Sort neighbors based on angles in clockwise order
+        sorted_indices = [x for _, x in sorted(zip(angles, cell_indices[1:]))]
+
+        # Append the sorted indices to the clockwise_indices list
+        clockwise_indices.append(np.concatenate(([cell_indices[0]], sorted_indices)))
+
 
     # Create column names for the new columns
     new_columns = [f'Nearest_{i}' for i in range(1, 25)]
@@ -71,4 +87,5 @@ def create_grid_to_window_mapper(the_folder_path = folder_path):
     result.to_csv(grid_to_window_mapper_csv, index=False)
     print(f"grid to window mapper csv is saved to {grid_to_window_mapper_csv}")
     
-
+# create_grid_to_window_mapper()
+    

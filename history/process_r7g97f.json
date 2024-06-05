@@ -1,0 +1,431 @@
+[{
+  "history_id" : "vmfhrimdhjz",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717260625848,
+  "history_end_time" : 1717260625848,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "8y176dv5180",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717258417410,
+  "history_end_time" : 1717260624672,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "5ohli7pea5z",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717233644392,
+  "history_end_time" : 1717258424648,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "tqsga8acv6i",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717233051794,
+  "history_end_time" : 1717233634241,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "m7sexm514xm",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717183214975,
+  "history_end_time" : 1717233633766,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "cg4p3frr688",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654904,
+  "history_end_time" : 1717182654904,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "10bntq2revy",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716612552462,
+  "history_end_time" : 1717233631814,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "oont98fnt7q",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582541,
+  "history_end_time" : 1716612551161,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "m27n0ngtubg",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716610207114,
+  "history_end_time" : 1716611579216,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "7ya52tk7snh",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716606646669,
+  "history_end_time" : 1716610196721,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "gabo8phdw09",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716120710376,
+  "history_end_time" : 1716610159517,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "jhsmy35np7n",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716068763000,
+  "history_end_time" : 1716076012600,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "rnje1bmkvc7",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716068608571,
+  "history_end_time" : 1716068760872,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "hff78r7w0d7",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468676,
+  "history_end_time" : 1714838057264,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "xgrbpdpslwc",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714161440462,
+  "history_end_time" : 1714161440462,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "zfa7ou4p6ie",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1713966604357,
+  "history_end_time" : 1713966604357,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "4v5yxnd504w",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1713935811088,
+  "history_end_time" : 1713935811088,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "vvp5c6z75q5",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1712452760507,
+  "history_end_time" : 1712452760507,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "eg66hkq54d5",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1712452402391,
+  "history_end_time" : 1712452749964,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "3hu98488dgi",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1712445947153,
+  "history_end_time" : 1712445947153,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "ghvy38tjygy",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711723378024,
+  "history_end_time" : 1711723378024,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "J1M7XNy1Aht7",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\n# file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_3/20200702_time_series_with_window.csv\"\n#file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_5/20201029_time_series_with_window.csv\"\nfile_path = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/firedata_20210714_predicted.txt\"\n\n#file_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\n#column_name = ' FRP'\n\n# Basic statistics\n#stats = df[column_name].describe()\n\n#print(stats)\nprint(\"Summary Statistics of the DataFrame:\")\n#print(df.describe(include='all'))\nfor column in df.columns:\n    print(f\"\\nColumn: {column}\")\n    if pd.api.types.is_numeric_dtype(df[column]):\n        print(df[column].describe())\n    else:\n        print(df[column].describe(include=['object']))\n\n",
+  "history_output" : "     FWI    VPD   HT  ...  Nearest_23  Nearest_24  Predicted_FRP\n0 -999.0 -999.0  0.0  ...         0.0         0.0            0.0\n1 -999.0 -999.0  0.0  ...         0.0         0.0            0.0\n2 -999.0 -999.0  0.0  ...         0.0         0.0            0.0\n3 -999.0 -999.0  0.0  ...         0.0         0.0            0.0\n4 -999.0 -999.0  0.0  ...         0.0         0.0            0.0\n[5 rows x 44 columns]\nSummary Statistics of the DataFrame:\nColumn:  FWI\ncount    156861.000000\nmean       -258.250233\nstd         453.648531\nmin        -999.000000\n25%        -999.000000\n50%           2.011475\n75%          22.539124\nmax         108.957550\nName:  FWI, dtype: float64\nColumn:  VPD\ncount    156861.000000\nmean       -457.475008\nstd         498.493114\nmin        -999.000000\n25%        -999.000000\n50%           0.543333\n75%           1.261667\nmax           7.503333\nName:  VPD, dtype: float64\nColumn:  HT\ncount    156861.000000\nmean        397.273553\nstd         537.554023\nmin         -82.599998\n25%           0.000000\n50%         176.699997\n75%         558.400024\nmax        2798.699951\nName:  HT, dtype: float64\nColumn:  T\ncount    156861.000000\nmean        297.382289\nstd           5.501077\nmin         278.939270\n25%         293.314270\n50%         297.464294\n75%         301.164276\nmax         317.814270\nName:  T, dtype: float64\nColumn:  RH\ncount    156861.000000\nmean         48.895589\nstd          23.119428\nmin           1.175000\n25%          31.925001\n50%          52.650002\n75%          67.000000\nmax          99.099998\nName:  RH, dtype: float64\nColumn:  U\ncount    156861.000000\nmean         -0.165169\nstd           2.686364\nmin          -7.397795\n25%          -1.607795\n50%           0.309705\n75%           1.644705\nmax          10.009705\nName:  U, dtype: float64\nColumn:  V\ncount    156861.000000\nmean          0.645645\nstd           3.088962\nmin         -17.700304\n25%          -0.750304\n50%           0.922196\n75%           2.204696\nmax           9.774696\nName:  V, dtype: float64\nColumn:  P\ncount    156861.000000\nmean      96006.952742\nstd        7226.211871\nmin       66623.296875\n25%       92642.898438\n50%       98662.101562\n75%      101635.296875\nmax      102620.898438\nName:  P, dtype: float64\nColumn:  RAIN\ncount    156861.000000\nmean          0.000034\nstd           0.000088\nmin           0.000000\n25%           0.000000\n50%           0.000001\n75%           0.000025\nmax           0.002174\nName:  RAIN, dtype: float64\nColumn:  CAPE\ncount    156861.000000\nmean        473.468384\nstd         578.939409\nmin           0.000000\n25%          12.750000\n50%         239.500000\n75%         738.750000\nmax        2889.000000\nName:  CAPE, dtype: float64\nColumn:  ST\ncount    156861.000000\nmean       -116.766256\nstd         603.865773\nmin        -999.000000\n25%        -999.000000\n50%         292.414490\n75%         298.039490\nmax         316.939514\nName:  ST, dtype: float64\nColumn:  SM\ncount    156861.000000\nmean       -318.574307\nstd         465.720299\nmin        -999.000000\n25%        -999.000000\n50%           0.124000\n75%           0.222250\nmax           0.391250\nName:  SM, dtype: float64\nColumn:  FRP_1_days_ago\ncount    156861.000000\nmean          0.240383\nstd          17.442142\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName:  FRP_1_days_ago, dtype: float64\nColumn:  FRP_2_days_ago\ncount    156861.000000\nmean          0.469768\nstd          52.007267\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax       15687.671875\nName:  FRP_2_days_ago, dtype: float64\nColumn:  FRP_3_days_ago\ncount    156861.000000\nmean          0.302685\nstd          23.155200\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        5055.526367\nName:  FRP_3_days_ago, dtype: float64\nColumn:  FRP_4_days_ago\ncount    156861.000000\nmean          0.678789\nstd          85.790401\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax       23213.011719\nName:  FRP_4_days_ago, dtype: float64\nColumn:  FRP_5_days_ago\ncount    156861.000000\nmean          0.580826\nstd          74.094883\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax       19605.007812\nName:  FRP_5_days_ago, dtype: float64\nColumn:  FRP_6_days_ago\ncount    156861.000000\nmean          0.163110\nstd          18.545293\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        5464.172363\nName:  FRP_6_days_ago, dtype: float64\nColumn:  FRP_7_days_ago\ncount    156861.000000\nmean          0.227513\nstd          34.938262\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax       11733.906250\nName:  FRP_7_days_ago, dtype: float64\nColumn: Nearest_1\ncount    156861.000000\nmean          0.263088\nstd          19.027738\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_1, dtype: float64\nColumn: Nearest_2\ncount    156861.000000\nmean          0.233074\nstd          16.293674\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_2, dtype: float64\nColumn: Nearest_3\ncount    156861.000000\nmean          0.259503\nstd          18.694186\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_3, dtype: float64\nColumn: Nearest_4\ncount    156861.000000\nmean          0.191707\nstd          15.169872\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_4, dtype: float64\nColumn: Nearest_5\ncount    156861.000000\nmean          0.289962\nstd          19.789719\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_5, dtype: float64\nColumn: Nearest_6\ncount    156861.000000\nmean          0.268589\nstd          19.300925\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_6, dtype: float64\nColumn: Nearest_7\ncount    156861.000000\nmean          0.209263\nstd          15.087939\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_7, dtype: float64\nColumn: Nearest_8\ncount    156861.000000\nmean          0.194290\nstd          15.004442\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_8, dtype: float64\nColumn: Nearest_9\ncount    156861.000000\nmean          0.207485\nstd          17.631308\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_9, dtype: float64\nColumn: Nearest_10\ncount    156861.000000\nmean          0.263121\nstd          16.822155\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        2525.819092\nName: Nearest_10, dtype: float64\nColumn: Nearest_11\ncount    156861.000000\nmean          0.232832\nstd          17.380702\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_11, dtype: float64\nColumn: Nearest_12\ncount    156861.000000\nmean          0.230596\nstd          17.370676\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_12, dtype: float64\nColumn: Nearest_13\ncount    156861.000000\nmean          0.287933\nstd          20.844535\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_13, dtype: float64\nColumn: Nearest_14\ncount    156861.000000\nmean          0.264434\nstd          19.081978\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_14, dtype: float64\nColumn: Nearest_15\ncount    156861.000000\nmean          0.195398\nstd          13.537660\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        2525.819092\nName: Nearest_15, dtype: float64\nColumn: Nearest_16\ncount    156861.000000\nmean          0.209189\nstd          18.190562\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_16, dtype: float64\nColumn: Nearest_17\ncount    156861.000000\nmean          0.294054\nstd          19.806804\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_17, dtype: float64\nColumn: Nearest_18\ncount    156861.000000\nmean          0.193720\nstd          13.252719\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        2217.971924\nName: Nearest_18, dtype: float64\nColumn: Nearest_19\ncount    156861.000000\nmean          0.235701\nstd          16.126122\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        2217.971924\nName: Nearest_19, dtype: float64\nColumn: Nearest_20\ncount    156861.000000\nmean          0.205554\nstd          16.251253\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        2525.819092\nName: Nearest_20, dtype: float64\nColumn: Nearest_21\ncount    156861.000000\nmean          0.268954\nstd          19.205353\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_21, dtype: float64\nColumn: Nearest_22\ncount    156861.000000\nmean          0.207841\nstd          17.234808\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        3668.386230\nName: Nearest_22, dtype: float64\nColumn: Nearest_23\ncount    156861.000000\nmean          0.268828\nstd          17.621590\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        2525.819092\nName: Nearest_23, dtype: float64\nColumn: Nearest_24\ncount    156861.000000\nmean          0.206926\nstd          15.262369\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        2525.819092\nName: Nearest_24, dtype: float64\nColumn: Predicted_FRP\ncount    156861.000000\nmean          7.015920\nstd         337.766953\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax       40771.699219\nName: Predicted_FRP, dtype: float64\n",
+  "history_begin_time" : 1711722526332,
+  "history_end_time" : 1711722528007,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "k57y85pvhat",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711722163455,
+  "history_end_time" : 1711723321982,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "oIN260dNdbAX",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\n# file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_3/20200702_time_series_with_window.csv\"\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_5/20201029_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\n#column_name = ' FRP'\n\n# Basic statistics\n#stats = df[column_name].describe()\n\n#print(stats)\nprint(\"Summary Statistics of the DataFrame:\")\n#print(df.describe(include='all'))\nfor column in df.columns:\n    print(f\"\\nColumn: {column}\")\n    if pd.api.types.is_numeric_dtype(df[column]):\n        print(df[column].describe())\n    else:\n        print(df[column].describe(include=['object']))\n\n",
+  "history_output" : "         LAT         LON        FRP  ...  Nearest_22  Nearest_23  Nearest_24\n0  24.900002  -98.799995   0.000000  ...         0.0         0.0         0.0\n1  25.099998 -111.799995   0.000000  ...         0.0         0.0         0.0\n2  25.200005 -111.699997  20.746534  ...         0.0         0.0         0.0\n3  25.200005  -98.799995   0.000000  ...         0.0         0.0         0.0\n4  25.500000  -99.500000   0.000000  ...         0.0         0.0         0.0\n[5 rows x 46 columns]\nSummary Statistics of the DataFrame:\nColumn: LAT\ncount    183.000000\nmean      36.340439\nstd        7.141044\nmin       24.900002\n25%       30.400002\n50%       37.300003\n75%       42.800003\nmax       48.000000\nName: LAT, dtype: float64\nColumn:  LON\ncount    183.000000\nmean    -107.212567\nstd       14.651925\nmin     -123.699997\n25%     -119.099998\n50%     -115.799995\n75%      -98.000000\nmax      -77.699997\nName:  LON, dtype: float64\nColumn:  FRP\ncount    183.000000\nmean       4.677336\nstd       10.439240\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        3.336142\nmax       58.270329\nName:  FRP, dtype: float64\nColumn:  FWI\ncount    183.000000\nmean      25.715099\nstd       21.951010\nmin        0.186157\n25%        4.078125\n50%       19.175781\n75%       46.222717\nmax       76.539062\nName:  FWI, dtype: float64\nColumn:  VPD\ncount    183.000000\nmean    -130.195915\nstd      338.469211\nmin     -999.000000\n25%        0.461667\n50%        0.674444\n75%        1.215000\nmax        2.450000\nName:  VPD, dtype: float64\nColumn:  HT\ncount     183.000000\nmean      404.840442\nstd       480.079228\nmin         0.000000\n25%        16.300001\n50%       221.699997\n75%       649.950012\nmax      1908.200073\nName:  HT, dtype: float64\nColumn:  T\ncount    183.000000\nmean     286.422566\nstd        7.531305\nmin      272.116028\n25%      280.991028\n50%      285.615997\n75%      291.116013\nmax      301.390991\nName:  T, dtype: float64\nColumn:  RH\ncount    183.000000\nmean      46.698498\nstd       26.193606\nmin       10.550000\n25%       23.850002\n50%       44.200001\n75%       75.875004\nmax       90.900002\nName:  RH, dtype: float64\nColumn:  U\ncount    183.000000\nmean       0.560535\nstd        1.838528\nmin       -3.527129\n25%       -0.440879\n50%        0.237871\n75%        1.265371\nmax        5.192871\nName:  U, dtype: float64\nColumn:  V\ncount    183.000000\nmean      -0.401131\nstd        2.185496\nmin       -6.926595\n25%       -1.467845\n50%       -0.416595\n75%        0.603405\nmax        5.310905\nName:  V, dtype: float64\nColumn:  P\ncount       183.000000\nmean      93861.509349\nstd        8496.007833\nmin       70695.882812\n25%       88720.679688\n50%       97475.078125\n75%      101037.085938\nmax      101666.281250\nName:  P, dtype: float64\nColumn:  RAIN\ncount    183.000000\nmean       0.000010\nstd        0.000032\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax        0.000175\nName:  RAIN, dtype: float64\nColumn:  CAPE\ncount    183.000000\nmean      62.045082\nstd      163.487777\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      706.000000\nName:  CAPE, dtype: float64\nColumn:  ST\ncount    183.000000\nmean     278.859144\nstd       95.346096\nmin     -999.000000\n25%      280.380356\n50%      284.527832\n75%      291.867859\nmax      301.460327\nName:  ST, dtype: float64\nColumn:  SM\ncount    183.000000\nmean      -5.298231\nstd       73.860223\nmin     -999.000000\n25%        0.063000\n50%        0.160250\n75%        0.236500\nmax        0.450500\nName:  SM, dtype: float64\nColumn:  FRP_1_days_ago\ncount    183.000000\nmean      11.224963\nstd       20.292661\nmin        0.000000\n25%        1.680578\n50%        3.638706\n75%       12.211698\nmax      167.142792\nName:  FRP_1_days_ago, dtype: float64\nColumn:  FRP_2_days_ago\ncount    183.000000\nmean       3.284995\nstd       19.192531\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      241.932022\nName:  FRP_2_days_ago, dtype: float64\nColumn:  FRP_3_days_ago\ncount    183.000000\nmean       9.671580\nstd       64.731022\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      627.341980\nName:  FRP_3_days_ago, dtype: float64\nColumn:  FRP_4_days_ago\ncount    183.000000\nmean       1.328461\nstd       10.084556\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      125.518188\nName:  FRP_4_days_ago, dtype: float64\nColumn:  FRP_5_days_ago\ncount    183.000000\nmean       2.409217\nstd       18.186517\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      231.400406\nName:  FRP_5_days_ago, dtype: float64\nColumn:  FRP_6_days_ago\ncount    183.000000\nmean       2.273954\nstd       14.679708\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      155.701523\nName:  FRP_6_days_ago, dtype: float64\nColumn:  FRP_7_days_ago\ncount    183.000000\nmean       2.087150\nstd       15.207034\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      198.165543\nName:  FRP_7_days_ago, dtype: float64\nColumn: Nearest_1\ncount    183.000000\nmean       3.386527\nstd       15.420070\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      167.142792\nName: Nearest_1, dtype: float64\nColumn: Nearest_2\ncount    183.000000\nmean       4.248714\nstd       16.139078\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      122.983841\nName: Nearest_2, dtype: float64\nColumn: Nearest_3\ncount    183.000000\nmean       2.323182\nstd       10.561047\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      122.983841\nName: Nearest_3, dtype: float64\nColumn: Nearest_4\ncount    183.000000\nmean       1.666864\nstd        7.015319\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       53.165253\nName: Nearest_4, dtype: float64\nColumn: Nearest_5\ncount    183.000000\nmean       3.588635\nstd       16.922506\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      122.983841\nName: Nearest_5, dtype: float64\nColumn: Nearest_6\ncount    183.000000\nmean       2.018081\nstd       13.512554\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      167.142792\nName: Nearest_6, dtype: float64\nColumn: Nearest_7\ncount    183.000000\nmean       1.201940\nstd        5.218440\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       42.547237\nName: Nearest_7, dtype: float64\nColumn: Nearest_8\ncount    183.000000\nmean       0.841585\nstd        4.478164\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       48.838905\nName: Nearest_8, dtype: float64\nColumn: Nearest_9\ncount    183.000000\nmean       0.506840\nstd        2.665474\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       25.877464\nName: Nearest_9, dtype: float64\nColumn: Nearest_10\ncount    183.000000\nmean       0.506725\nstd        4.149633\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       53.165253\nName: Nearest_10, dtype: float64\nColumn: Nearest_11\ncount    183.000000\nmean       0.086820\nstd        0.869006\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       10.454624\nName: Nearest_11, dtype: float64\nColumn: Nearest_12\ncount    183.000000\nmean       0.969751\nstd        9.355645\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      122.983841\nName: Nearest_12, dtype: float64\nColumn: Nearest_13\ncount    183.000000\nmean       1.749320\nstd        7.986248\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       53.165253\nName: Nearest_13, dtype: float64\nColumn: Nearest_14\ncount    183.000000\nmean       0.547078\nstd        2.913982\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       29.380964\nName: Nearest_14, dtype: float64\nColumn: Nearest_15\ncount    183.000000\nmean       0.760155\nstd        4.327357\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       53.165253\nName: Nearest_15, dtype: float64\nColumn: Nearest_16\ncount    183.000000\nmean       1.344144\nstd       10.441855\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      122.983841\nName: Nearest_16, dtype: float64\nColumn: Nearest_17\ncount    183.000000\nmean       0.200048\nstd        1.507093\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       18.912260\nName: Nearest_17, dtype: float64\nColumn: Nearest_18\ncount    183.000000\nmean       1.414129\nstd       10.557720\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      122.983841\nName: Nearest_18, dtype: float64\nColumn: Nearest_19\ncount    183.000000\nmean       1.438198\nstd       10.466348\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax      122.983841\nName: Nearest_19, dtype: float64\nColumn: Nearest_20\ncount    183.000000\nmean       0.215736\nstd        1.666022\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       18.912260\nName: Nearest_20, dtype: float64\nColumn: Nearest_21\ncount    183.000000\nmean       1.181034\nstd        6.822616\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       66.980667\nName: Nearest_21, dtype: float64\nColumn: Nearest_22\ncount    183.000000\nmean       0.493999\nstd        2.855714\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       25.877464\nName: Nearest_22, dtype: float64\nColumn: Nearest_23\ncount    183.000000\nmean       0.753174\nstd        5.074116\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       48.838905\nName: Nearest_23, dtype: float64\nColumn: Nearest_24\ncount    183.000000\nmean       0.277792\nstd        2.581909\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax       29.380964\nName: Nearest_24, dtype: float64\n",
+  "history_begin_time" : 1711721476902,
+  "history_end_time" : 1711721478133,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "kXD0aWrGFurL",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\n# file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_3/20200702_time_series_with_window.csv\"\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_5/20201029_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\n#column_name = ' FRP'\n\n# Basic statistics\n#stats = df[column_name].describe()\n\n#print(stats)\nprint(\"Summary Statistics of the DataFrame:\")\nprint(df.describe(include='all'))\n\n",
+  "history_output" : "         LAT         LON        FRP  ...  Nearest_22  Nearest_23  Nearest_24\n0  24.900002  -98.799995   0.000000  ...         0.0         0.0         0.0\n1  25.099998 -111.799995   0.000000  ...         0.0         0.0         0.0\n2  25.200005 -111.699997  20.746534  ...         0.0         0.0         0.0\n3  25.200005  -98.799995   0.000000  ...         0.0         0.0         0.0\n4  25.500000  -99.500000   0.000000  ...         0.0         0.0         0.0\n[5 rows x 46 columns]\nSummary Statistics of the DataFrame:\n              LAT         LON         FRP  ...  Nearest_22  Nearest_23  Nearest_24\ncount  183.000000  183.000000  183.000000  ...  183.000000  183.000000  183.000000\nmean    36.340439 -107.212567    4.677336  ...    0.493999    0.753174    0.277792\nstd      7.141044   14.651925   10.439240  ...    2.855714    5.074116    2.581909\nmin     24.900002 -123.699997    0.000000  ...    0.000000    0.000000    0.000000\n25%     30.400002 -119.099998    0.000000  ...    0.000000    0.000000    0.000000\n50%     37.300003 -115.799995    0.000000  ...    0.000000    0.000000    0.000000\n75%     42.800003  -98.000000    3.336142  ...    0.000000    0.000000    0.000000\nmax     48.000000  -77.699997   58.270329  ...   25.877464   48.838905   29.380964\n[8 rows x 46 columns]\n",
+  "history_begin_time" : 1711721439848,
+  "history_end_time" : 1711721440639,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "TLAQiZR2DWml",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\n# file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_3/20200702_time_series_with_window.csv\"\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_5/20201029_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\n#column_name = ' FRP'\n\n# Basic statistics\n#stats = df[column_name].describe()\n\n#print(stats)\nprint(\"Summary Statistics of the DataFrame:\")\nprint(df.describe())\n\n",
+  "history_output" : "         LAT         LON        FRP  ...  Nearest_22  Nearest_23  Nearest_24\n0  24.900002  -98.799995   0.000000  ...         0.0         0.0         0.0\n1  25.099998 -111.799995   0.000000  ...         0.0         0.0         0.0\n2  25.200005 -111.699997  20.746534  ...         0.0         0.0         0.0\n3  25.200005  -98.799995   0.000000  ...         0.0         0.0         0.0\n4  25.500000  -99.500000   0.000000  ...         0.0         0.0         0.0\n[5 rows x 46 columns]\nSummary Statistics of the DataFrame:\n              LAT         LON         FRP  ...  Nearest_22  Nearest_23  Nearest_24\ncount  183.000000  183.000000  183.000000  ...  183.000000  183.000000  183.000000\nmean    36.340439 -107.212567    4.677336  ...    0.493999    0.753174    0.277792\nstd      7.141044   14.651925   10.439240  ...    2.855714    5.074116    2.581909\nmin     24.900002 -123.699997    0.000000  ...    0.000000    0.000000    0.000000\n25%     30.400002 -119.099998    0.000000  ...    0.000000    0.000000    0.000000\n50%     37.300003 -115.799995    0.000000  ...    0.000000    0.000000    0.000000\n75%     42.800003  -98.000000    3.336142  ...    0.000000    0.000000    0.000000\nmax     48.000000  -77.699997   58.270329  ...   25.877464   48.838905   29.380964\n[8 rows x 46 columns]\n",
+  "history_begin_time" : 1711721405878,
+  "history_end_time" : 1711721406978,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "kkrk1bzy63r",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711203851074,
+  "history_end_time" : 1712452724076,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "p2e7nrezqk9",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711136729449,
+  "history_end_time" : 1711136729449,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "pw5fg6kd3cc",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711136573130,
+  "history_end_time" : 1711136662822,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "zpdn3f2ihbe",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709930548100,
+  "history_end_time" : 1712452725019,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "ms0zukms332",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709930050159,
+  "history_end_time" : 1709930509965,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "Ger4kr8IRsd5",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\n# file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_3/20200702_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = ' FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "    LAT         LON        FRP  ...  Nearest_22  Nearest_23  Nearest_24\n0  24.5 -107.799995   0.000000  ...         0.0    0.000000    0.000000\n1  24.5 -107.699997   0.000000  ...         0.0    1.846816    0.000000\n2  24.5 -107.599998   0.000000  ...         0.0    0.000000    0.000000\n3  24.5 -107.500000   0.000000  ...         0.0    0.000000    2.479575\n4  24.5 -107.400002  19.839563  ...         0.0    0.000000    0.000000\n[5 rows x 46 columns]\ncount    3832.000000\nmean        0.507450\nstd         4.859471\nmin         0.000000\n25%         0.000000\n50%         0.000000\n75%         0.000000\nmax       146.101273\nName:  FRP, dtype: float64\n",
+  "history_begin_time" : 1709445228894,
+  "history_end_time" : 1709445229833,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "a6kq7vp28nh",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709444795638,
+  "history_end_time" : 1712452725799,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "kuij29qa0fs",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709444438282,
+  "history_end_time" : 1709444687351,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "DCY33Uy2Qt9X",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\n#file_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = ' FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "    LAT         LON   FRP  ...  Nearest_22  Nearest_23  Nearest_24\n0  24.5 -126.000000   0.0  ...         0.0         0.0         0.0\n1  24.5 -125.899994   0.0  ...         0.0         0.0         0.0\n2  24.5 -125.800003   0.0  ...         0.0         0.0         0.0\n3  24.5 -125.699997   0.0  ...         0.0         0.0         0.0\n4  24.5 -125.599998   0.0  ...         0.0         0.0         0.0\n[5 rows x 46 columns]\ncount    152623.0\nmean          0.0\nstd           0.0\nmin           0.0\n25%           0.0\n50%           0.0\n75%           0.0\nmax           0.0\nName:  FRP, dtype: float64\n",
+  "history_begin_time" : 1709442081445,
+  "history_end_time" : 1709442083536,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "tCoxr3JgUybi",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\n# file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\nfile_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = ' FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "    LAT         LON   FRP    FWI  ...   RAIN   CAPE     ST     SM\n0  24.5 -126.000000   0.0 -999.0  ...    0.0   3.50 -999.0 -999.0\n1  24.5 -125.899994   0.0 -999.0  ...    0.0   3.50 -999.0 -999.0\n2  24.5 -125.800003   0.0 -999.0  ...    0.0   3.25 -999.0 -999.0\n3  24.5 -125.699997   0.0 -999.0  ...    0.0   3.25 -999.0 -999.0\n4  24.5 -125.599998   0.0 -999.0  ...    0.0   3.50 -999.0 -999.0\n[5 rows x 15 columns]\ncount    156861.000000\nmean          0.011755\nstd           1.005275\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax         190.992203\nName:  FRP, dtype: float64\n",
+  "history_begin_time" : 1709441399207,
+  "history_end_time" : 1709441400167,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "UDe29jQU85LY",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\n# file_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\nfile_path = \"/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200713.txt\"\n\ndf = pd.read_csv(file_path)\n\nprint(df.head())\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = ' FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "    LAT         LON   FRP    FWI  ...   RAIN   CAPE     ST     SM\n0  24.5 -126.000000   0.0 -999.0  ...    0.0    0.0 -999.0 -999.0\n1  24.5 -125.899994   0.0 -999.0  ...    0.0    0.0 -999.0 -999.0\n2  24.5 -125.800003   0.0 -999.0  ...    0.0    0.0 -999.0 -999.0\n3  24.5 -125.699997   0.0 -999.0  ...    0.0    0.0 -999.0 -999.0\n4  24.5 -125.599998   0.0 -999.0  ...    0.0    0.0 -999.0 -999.0\n[5 rows x 15 columns]\ncount    156861.000000\nmean          0.035141\nstd           4.125157\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax        1319.282104\nName:  FRP, dtype: float64\n",
+  "history_begin_time" : 1709441378874,
+  "history_end_time" : 1709441380066,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "Sz3Aag5CUqzS",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200715_time_series_with_window.csv\"\n\ndf = pd.read_csv(file_path)\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = ' FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "count    152623.0\nmean          0.0\nstd           0.0\nmin           0.0\n25%           0.0\n50%           0.0\n75%           0.0\nmax           0.0\nName:  FRP, dtype: float64\n",
+  "history_begin_time" : 1709432597639,
+  "history_end_time" : 1709432601327,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "yqgu97zhiyBE",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200714_time_series_with_window.csv\"\n\ndf = pd.read_csv(file_path)\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = ' FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "count    152091.0\nmean          0.0\nstd           0.0\nmin           0.0\n25%           0.0\n50%           0.0\n75%           0.0\nmax           0.0\nName:  FRP, dtype: float64\n",
+  "history_begin_time" : 1709432453628,
+  "history_end_time" : 1709432455474,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "Y7tZjxPQl8sI",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\n#file_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\nfile_path = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new//20200729_time_series_with_window.csv\"\n\ndf = pd.read_csv(file_path)\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = ' FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "count    154373.0\nmean          0.0\nstd           0.0\nmin           0.0\n25%           0.0\n50%           0.0\n75%           0.0\nmax           0.0\nName:  FRP, dtype: float64\n",
+  "history_begin_time" : 1709432414646,
+  "history_end_time" : 1709432419298,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "I44RVfpkClwe",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\nfile_path=f\"{output_folder}/firedata_20210720_predicted.txt\"\n\ndf = pd.read_csv(file_path)\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = 'Predicted_FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "count    156861.000000\nmean         40.777289\nstd          59.403501\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%          85.916771\nmax         296.572540\nName: Predicted_FRP, dtype: float64\n",
+  "history_begin_time" : 1709324608283,
+  "history_end_time" : 1709324610481,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "AQmHHumovISB",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\nfile_path=f\"{output_folder}/firedata_20210715_predicted.txt\"\n\ndf = pd.read_csv(file_path)\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = 'Predicted_FRP'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "count    156861.000000\nmean          4.912485\nstd          24.552810\nmin           0.000000\n25%           0.000000\n50%           0.000000\n75%           0.000000\nmax         276.471130\nName: Predicted_FRP, dtype: float64\n",
+  "history_begin_time" : 1709324538029,
+  "history_end_time" : 1709324540356,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "F640xonelCMw",
+  "history_input" : "# Write first python in Geoweaver\nimport pandas as pd\n\noutput_folder = \"/groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting//20210714/\"\n\nfile_path=f\"{output_folder}/firedata_20210715_predicted.txt\"\n\ndf = pd.read_csv(file_path)\n\n# Assuming you want to calculate statistics of a column named 'column_name'\ncolumn_name = 'column_name'\n\n# Basic statistics\nstats = df[column_name].describe()\n\nprint(stats)\n\n",
+  "history_output" : "Traceback (most recent call last):\n  File \"/home/zsun/anaconda3/lib/python3.8/site-packages/pandas/core/indexes/base.py\", line 3621, in get_loc\n    return self._engine.get_loc(casted_key)\n  File \"pandas/_libs/index.pyx\", line 136, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/index.pyx\", line 163, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'column_name'\nThe above exception was the direct cause of the following exception:\nTraceback (most recent call last):\n  File \"check_on_results.py\", line 14, in <module>\n    stats = df[column_name].describe()\n  File \"/home/zsun/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py\", line 3505, in __getitem__\n    indexer = self.columns.get_loc(key)\n  File \"/home/zsun/anaconda3/lib/python3.8/site-packages/pandas/core/indexes/base.py\", line 3623, in get_loc\n    raise KeyError(key) from err\nKeyError: 'column_name'\n",
+  "history_begin_time" : 1709324517665,
+  "history_end_time" : 1709324523466,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : null,
+  "indicator" : "Failed"
+},]

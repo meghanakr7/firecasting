@@ -8,16 +8,18 @@ SCRIPT_NAME="plot_results_generated.sh"
 echo "write the slurm script into ${SCRIPT_NAME}"
 cat > ${SCRIPT_NAME} << EOF
 #!/bin/bash
-#SBATCH -J fc_model_predict_2weeks       # Job name
+#SBATCH -J plot_results       # Job name
+#SBATCH --qos=qtong             #
+#SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test
+#SBATCH --time=12:00:00         # walltime
+#SBATCH --nodes=1               # Number of nodes I want to use, max is 15 for lin-group, each node has 48 cores
+#SBATCH --ntasks-per-node=12    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96
+#SBATCH --mail-user=zsun@gmu.edu    #Email account
+#SBATCH --mail-type=FAIL           #When to email
+#SBATCH --mem=18000M
+#SBATCH --cores-per-socket=8
 #SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`
 #SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`
-#SBATCH -n 1               # Number of tasks
-#SBATCH -c 12               # Number of CPUs per task (threads)
-#SBATCH --mem=20G          # Memory per node (use units like G for gigabytes) - this job must need 200GB lol
-#SBATCH -t 0-10:00         # Runtime in D-HH:MM format
-## Slurm can send you updates via email
-#SBATCH --mail-type=FAIL  # BEGIN,END,FAIL         # ALL,NONE,BEGIN,END,FAIL,REQUEUE,..
-#SBATCH --mail-user=zsun@gmu.edu     # Put your GMU email address here
 
 # Activate your customized virtual environment
 source /home/zsun/anaconda3/bin/activate
@@ -26,11 +28,8 @@ source /home/zsun/anaconda3/bin/activate
 python -u << INNER_EOF
 
 from plot_results import plot_images
-from generate_mapfiles import generate_mapfiles
 
 plot_images()
-
-generate_mapfiles()
 
 INNER_EOF
 
@@ -70,20 +69,22 @@ while true; do
     #echo ${job_id}
     file_name=$(find /scratch/zsun -name '*'${job_id}'.out' -print -quit)
     #echo "file_name="$file_name
-    current_content=$(<"${file_name}")
-    #echo "current_content = "$current_content
+    if [ -e "$file_name" ]; then
+      current_content=$(<"${file_name}")
+      #echo "current_content = "$current_content
 
-    # Compare current content with previous content
-    diff_result=$(diff <(echo "$previous_content") <(echo "$current_content"))
-    # Check if there is new content
-    if [ -n "$diff_result" ]; then
-        # Print the newly added content
-        #echo "New content added:"
-        echo "$diff_result"
-        #echo "---------------------"
+      # Compare current content with previous content
+      diff_result=$(diff <(echo "$previous_content") <(echo "$current_content"))
+      # Check if there is new content
+      if [ -n "$diff_result" ]; then
+          # Print the newly added content
+          #echo "New content added:"
+          echo "$diff_result"
+          #echo "---------------------"
+      fi
+      # Update previous content
+      previous_content="$current_content"
     fi
-    # Update previous content
-    previous_content="$current_content"
 
 
     job_status=$(scontrol show job ${job_id} | awk '/JobState=/{print $1}')
@@ -106,9 +107,7 @@ echo "Slurm job ($job_id) has finished."
 
 echo "Print the job's output logs"
 sacct --format=JobID,JobName,State,ExitCode,MaxRSS,Start,End -j $job_id
-# find /scratch/zsun/ -type f -name "*${job_id}.out" -exec cat {} \;
-
-#cat /scratch/zsun/test_data_slurm-*-$job_id.out
+#find /scratch/zsun/ -type f -name "*${job_id}.out" -exec cat {} \;
 
 echo "All slurm job for ${SCRIPT_NAME} finishes."
 

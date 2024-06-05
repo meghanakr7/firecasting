@@ -3,21 +3,28 @@
 echo "start to run fc_model_predict_2weeks.sh"
 pwd
 
+# clean up the old log
+> /home/zsun/fc_model_predict_2weeks.out
+> /home/zsun/fc_model_predict_2weeks.err
+
 # Specify the name of the script you want to submit
 SCRIPT_NAME="fc_model_predict_2weeks_slurm_generated.sh"
 echo "write the slurm script into ${SCRIPT_NAME}"
 cat > ${SCRIPT_NAME} << EOF
 #!/bin/bash
 #SBATCH -J fc_model_predict_2weeks       # Job name
+#SBATCH --qos=qtong             #
+#SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test
+#SBATCH --time=24:00:00         # walltime
+#SBATCH --nodes=1               # Number of nodes I want to use, max is 15 for lin-group, each node has 48 cores
+#SBATCH --ntasks-per-node=12    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96
+#SBATCH --mail-user=zsun@gmu.edu    #Email account
+#SBATCH --mail-type=FAIL           #When to email
+#SBATCH --mem=20G
+#SBATCH --cores-per-socket=8
 #SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`
 #SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`
-#SBATCH -n 1               # Number of tasks
-#SBATCH -c 12               # Number of CPUs per task (threads)
-#SBATCH --mem=50G          # Memory per node (use units like G for gigabytes) - this job must need 200GB lol
-#SBATCH -t 0-10:00         # Runtime in D-HH:MM format
-## Slurm can send you updates via email
-#SBATCH --mail-type=FAIL  # BEGIN,END,FAIL         # ALL,NONE,BEGIN,END,FAIL,REQUEUE,..
-#SBATCH --mail-user=zsun@gmu.edu     # Put your GMU email address here
+
 
 # Activate your customized virtual environment
 source /home/zsun/anaconda3/bin/activate
@@ -27,8 +34,8 @@ python -u << INNER_EOF
 
 from fc_model_predict_2weeks import predict_2weeks
 
-start_date = "20210714"
-end_date = "20210714"
+start_date = "20210701"
+end_date = "20210831"
 
 predict_2weeks(start_date, end_date)
 
@@ -107,9 +114,8 @@ echo "Slurm job ($job_id) has finished."
 
 echo "Print the job's output logs"
 sacct --format=JobID,JobName,State,ExitCode,MaxRSS,Start,End -j $job_id
-# find /scratch/zsun/ -type f -name "*${job_id}.out" -exec cat {} \;
-
-#cat /scratch/zsun/test_data_slurm-*-$job_id.out
+find /scratch/zsun/ -type f -name "*${job_id}.out" -exec cat {} \;
+cat /scratch/zsun/test_data_slurm-*-$job_id.out
 
 echo "All slurm job for ${SCRIPT_NAME} finishes."
 

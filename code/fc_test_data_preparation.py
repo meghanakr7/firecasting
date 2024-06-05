@@ -9,9 +9,11 @@ from datetime import datetime, timedelta
 import dask
 from dask import delayed
 import dask.dataframe as dd
+from fc_train_data_preprocess import columns_to_be_time_series
+
 
 # Folder path containing the text files
-folder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files
+folder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata_VHI'  # The folder yunyao provided with two years of txt files
 my_file_path = "/groups/ESS3/zsun/firecasting/data/others/"
 grid_to_window_mapper_csv = f"{my_file_path}/grid_cell_nearest_neight_mapper.csv"
 training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/"
@@ -77,7 +79,7 @@ def read_txt_from_predicted_folder(target_datestr, current_prediction_output_fol
   final_df = file_df
   print("current final_df head: ", final_df.head())
   print("renaming Predicted_FRP to FRP")
-  final_df[' FRP'] = final_df['Predicted_FRP']
+  final_df['FRP'] = final_df['Predicted_FRP']
   # Remove the original column 'A'
   print("remove the current predicted_frp")
   final_df.drop(columns=['Predicted_FRP'], inplace=True)
@@ -93,11 +95,11 @@ def add_window_grid_cells(row, original_df, grid_to_window_mapper_df):
     # Implement your logic for adding window grid cells
     #print("current index: ", row['LAT'].astype(str) + "_" + row[' LON'].astype(str))
     # print("row values: ", row)
-    result = grid_to_window_mapper_df.loc[row['LAT'], row[' LON']]
+    result = grid_to_window_mapper_df.loc[row['LAT'], row['LON']]
     values = []
     for column in grid_to_window_mapper_df.columns:
         nearest_index = result[column]
-        values.append(original_df.iloc[nearest_index][" FRP_1_days_ago"])
+        values.append(original_df.iloc[nearest_index]["FRP_1_days_ago"])
     
     if len(values) != 24:
         raise ValueError("The nearest values are not 24.")
@@ -109,7 +111,7 @@ def get_one_day_time_series_for_2_weeks_testing_data(target_day, current_start_d
         return get_one_day_time_series_training_data(target_day)
     else:
         # get grid to window mapper csv
-        grid_to_window_mapper_df = pd.read_csv(grid_to_window_mapper_csv)
+        #grid_to_window_mapper_df = pd.read_csv(grid_to_window_mapper_csv)
 
         target_dt = datetime.strptime(target_day, '%Y%m%d')
         current_start_dt = datetime.strptime(current_start_day, '%Y%m%d')
@@ -127,25 +129,29 @@ def get_one_day_time_series_for_2_weeks_testing_data(target_day, current_start_d
             else:
                 print(f"reading from original folder")
                 past_df = read_original_txt_files(past_dt.strftime('%Y%m%d'))
-            column_to_append = past_df[" FRP"]
-            df[f' FRP_{i+1}_days_ago'] = column_to_append
+                
+            for c in columns_to_be_time_series:
+                column_to_append = past_df[c]
+                df[f'{c}_{i+1}_days_ago'] = column_to_append
+            #column_to_append = past_df["FRP"]
+            #df[f'FRP_{i+1}_days_ago'] = column_to_append
 
-        original_df = df
-        print("original_df.describe", original_df.describe())
+        #original_df = df
+        #print("original_df.describe", original_df.describe())
         
         # Reset the index before using set_index
         #grid_to_window_mapper_df = grid_to_window_mapper_df.reset_index()
         # adding the neighbor cell values of yesterday to the inputs
         # grid_to_window_mapper_df = grid_to_window_mapper_df.set_index(['LAT', ' LON'])
         #grid_to_window_mapper_df['Combined_Location'] = grid_to_window_mapper_df['LAT'].astype(str) + '_' + grid_to_window_mapper_df[' LON'].astype(str)
-        grid_to_window_mapper_df = grid_to_window_mapper_df.set_index(['LAT', ' LON'])
+        #grid_to_window_mapper_df = grid_to_window_mapper_df.set_index(['LAT', ' LON'])
         #grid_to_window_mapper_df.set_index('Combined_Location', inplace=True)
 
-        print("original_df columns: ", original_df.columns)
+        #print("original_df columns: ", original_df.columns)
         #print("original_df index: ", original_df.index)
         #print("grid_to_window_mapper_df columns: ", grid_to_window_mapper_df.columns)
         #print("grid_to_window_mapper_df index: ", grid_to_window_mapper_df.index)
-        new_df = original_df.apply(add_window_grid_cells, axis=1, args=(original_df, grid_to_window_mapper_df))
+        #new_df = original_df.apply(add_window_grid_cells, axis=1, args=(original_df, grid_to_window_mapper_df))
         # Assuming df is a Dask DataFrame
         #ddf = dd.from_pandas(original_df, npartitions=5)
         # Adjust the number of partitions as needed
@@ -155,9 +161,9 @@ def get_one_day_time_series_for_2_weeks_testing_data(target_day, current_start_d
 
         # Convert back to Pandas DataFrame
         #new_df = new_df.compute()
-        print("new_df.shape = ", new_df.shape)
-        print("df.shape = ", df.shape)
-        df[grid_to_window_mapper_df.columns] = new_df
+        #print("new_df.shape = ", new_df.shape)
+        #print("df.shape = ", df.shape)
+        #df[grid_to_window_mapper_df.columns] = new_df
 
         print("New time series dataframe: ", df.head())
         return df
@@ -179,7 +185,7 @@ def prepare_testing_data_for_2_weeks_forecasting(target_date, current_start_day,
     to fetch time series data for the given target date and start day.
   """
   # Assuming 'target' is the column to predict
-  target_col = ' FRP'
+  target_col = 'FRP'
   original_df = get_one_day_time_series_for_2_weeks_testing_data(target_date, current_start_day, current_prediction_output_folder)
   df = original_df
   print("Original df is created: ", original_df.shape)
@@ -192,7 +198,20 @@ def prepare_testing_data_for_2_weeks_forecasting(target_date, current_start_day,
   print("Original df filled the na with -9999 ")
 
   # Define features and target
-  X = df.drop([target_col, 'LAT', ' LON'], axis=1)
+  #X = df.drop([target_col, 'LAT', ' LON'], axis=1)
+  # Drop all the neighbor colums
+#   X = df.drop([target_col, 'LAT', ' LON', 'Nearest_1', 'Nearest_2',
+                 
+# 'Nearest_3', 'Nearest_4', 'Nearest_5', 'Nearest_6', 'Nearest_7',
+
+# 'Nearest_8', 'Nearest_9', 'Nearest_10', 'Nearest_11', 'Nearest_12',
+
+# 'Nearest_13', 'Nearest_14', 'Nearest_15', 'Nearest_16', 'Nearest_17',
+
+# 'Nearest_18', 'Nearest_19', 'Nearest_20', 'Nearest_21', 'Nearest_22',
+
+# 'Nearest_23', 'Nearest_24',], axis=1)
+  X = df.drop([target_col, 'LAT', 'LON'], axis=1)
   y = df[target_col]
   return X, y
   
@@ -205,6 +224,6 @@ def prepare_testing_data_for_2_weeks_forecasting(target_date, current_start_day,
 if __name__ == "__main__":
   #training_end_date = "20200715"
   #prepare_training_data(training_end_date)
-  output_folder_full_path = f'/groups/ESS3/zsun/firecasting/data/output/test_if_predicted_frp_used/20210718/'
+  output_folder_full_path = f'/groups/ESS3/zsun/firecasting/data/output/test_if_predicted_frp_used/20210714/'
   prepare_testing_data_for_2_weeks_forecasting("20210714", "20210714", output_folder_full_path)
 

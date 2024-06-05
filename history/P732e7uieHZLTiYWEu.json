@@ -1,0 +1,171 @@
+[{
+  "history_id" : "rjsqcatpu2j",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582512,
+  "history_end_time" : 1716612551152,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "mql0kv1c8vl",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582515,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "w4lpt8",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "h4m4mww62pv",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582517,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "521ngk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "iz2lcztqgkj",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582519,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "x8kqk7",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "x7gm8yoxbqs",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582520,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "wjq4fr",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "i45n6e7vy4c",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582522,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "l4eb73",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "bo4adra3tqb",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582524,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "pv7d8l",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "mayw7lyyqos",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582525,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "xku47i",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "0pyid5ub6kh",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1716612551153,
+  "history_notes" : null,
+  "history_process" : "dp0hiw",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "nqhyfiz2nf4",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1716612551155,
+  "history_notes" : null,
+  "history_process" : "b3cx6j",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "bkk2wjssn4r",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582531,
+  "history_end_time" : 1716612551157,
+  "history_notes" : null,
+  "history_process" : "k84mqm",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "454g33gsc4t",
+  "history_input" : "#!/bin/bash\n\necho \"start to run fc_model_predict_2weeks.sh\"\npwd\n\n# clean up the old log\n> /home/zsun/fc_model_predict_2weeks.out\n> /home/zsun/fc_model_predict_2weeks.err\n\n# Specify the name of the script you want to submit\nSCRIPT_NAME=\"fc_model_predict_2weeks_slurm_generated.sh\"\necho \"write the slurm script into ${SCRIPT_NAME}\"\ncat > ${SCRIPT_NAME} << EOF\n#!/bin/bash\n#SBATCH -J fc_model_predict_2weeks       # Job name\n#SBATCH --qos=qtong             #\n#SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test\n#SBATCH --time=120:00:00         # walltime\n#SBATCH --nodes=1               # Number of nodes I want to use, max is 15 for lin-group, each node has 48 cores\n#SBATCH --ntasks-per-node=12    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96\n#SBATCH --mail-user=zsun@gmu.edu    #Email account\n#SBATCH --mail-type=FAIL           #When to email\n#SBATCH --mem=20G\n#SBATCH --cores-per-socket=8\n#SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`\n#SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`\n\n\n# Activate your customized virtual environment\nsource /home/zsun/anaconda3/bin/activate\n\n# Call the Python script using process substitution\npython -u << INNER_EOF\n\nfrom fc_model_predict_2weeks import predict_2weeks\n\nstart_date = \"20210701\"\nend_date = \"20210831\"\n\npredict_2weeks(start_date, end_date)\n\n\nINNER_EOF\n\nEOF\n\n# Submit the Slurm job and wait for it to finish\necho \"sbatch ${SCRIPT_NAME}\"\n# should have another check. if there is another job running, should cancel it before submitting a new job.\n\n# Find and cancel existing running jobs with the same script name\n#existing_jobs=$(squeue -h -o \"%A %j\" -u $(whoami) | awk -v script=\"$SCRIPT_NAME\" '$2 == script {print $1}')\n\n# if [ -n \"$existing_jobs\" ]; then\n#     echo \"Canceling existing jobs with the script name '$SCRIPT_NAME'...\"\n#     for job_id in $existing_jobs; do\n#         scancel $job_id\n#     done\n# else\n#     echo \"No existing jobs with the script name '$SCRIPT_NAME' found.\"\n# fi\n\n# Submit the Slurm job\njob_id=$(sbatch ${SCRIPT_NAME} | awk '{print $4}')\necho \"job_id=\"${job_id}\n\nif [ -z \"${job_id}\" ]; then\n    echo \"job id is empty. something wrong with the slurm job submission.\"\n    exit 1\nfi\n\n# Wait for the Slurm job to finish\nfile_name=$(find /scratch/zsun -name '*'${job_id}'.out' -print -quit)\nprevious_content=$(cat file_name)\nexit_code=0\nwhile true; do\n    # Capture the current content\\\n    #echo ${job_id}\n    file_name=$(find /scratch/zsun -name '*'${job_id}'.out' -print -quit)\n    #echo \"file_name=\"$file_name\n    current_content=$(<\"${file_name}\")\n    #echo \"current_content = \"$current_content\n\n    # Compare current content with previous content\n    diff_result=$(diff <(echo \"$previous_content\") <(echo \"$current_content\"))\n    # Check if there is new content\n    if [ -n \"$diff_result\" ]; then\n        # Print the newly added content\n        #echo \"New content added:\"\n        echo \"$diff_result\"\n        #echo \"---------------------\"\n    fi\n    # Update previous content\n    previous_content=\"$current_content\"\n\n\n    job_status=$(scontrol show job ${job_id} | awk '/JobState=/{print $1}')\n    #echo \"job_status \"$job_status\n    #if [[ $job_status == \"JobState=COMPLETED\" ]]; then\n    #    break\n    #fi\n    if [[ $job_status == *\"COMPLETED\"* ]]; then\n        echo \"Job $job_id has finished with state: $job_status\"\n        break;\n    elif [[ $job_status == *\"CANCELLED\"* || $job_status == *\"FAILED\"* || $job_status == *\"TIMEOUT\"* || $job_status == *\"NODE_FAIL\"* || $job_status == *\"PREEMPTED\"* || $job_status == *\"OUT_OF_MEMORY\"* ]]; then\n        echo \"Job $job_id has finished with state: $job_status\"\n        exit_code=1\n        break;\n    fi\n    sleep 10  # Adjust the sleep interval as needed\ndone\n\necho \"Slurm job ($job_id) has finished.\"\n\necho \"Print the job's output logs\"\nsacct --format=JobID,JobName,State,ExitCode,MaxRSS,Start,End -j $job_id\nfind /scratch/zsun/ -type f -name \"*${job_id}.out\" -exec cat {} \\;\ncat /scratch/zsun/test_data_slurm-*-$job_id.out\n\necho \"All slurm job for ${SCRIPT_NAME} finishes.\"\n\nexit $exit_code\n",
+  "history_output" : "start to run fc_model_predict_2weeks.sh\n/home/zsun/gw-workspace/454g33gsc4t\nwrite the slurm script into fc_model_predict_2weeks_slurm_generated.sh\nsbatch fc_model_predict_2weeks_slurm_generated.sh\njob_id=1920749\ncat: file_name: No such file or directory\n/home/zsun/gw-workspace/454g33gsc4t/gw-8Ztl35tpRglnOhrxp6MWEr5NUf-454g33gsc4t.sh: line 81: : No such file or directory\n0a1,41\n> /home/zsun/anaconda3/lib/python3.8/site-packages/dask/dataframe/utils.py:367: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.\n>   _numeric_index_types = (pd.Int64Index, pd.Float64Index, pd.UInt64Index)\n> /home/zsun/anaconda3/lib/python3.8/site-packages/dask/dataframe/utils.py:367: FutureWarning: pandas.Float64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.\n>   _numeric_index_types = (pd.Int64Index, pd.Float64Index, pd.UInt64Index)\n> /home/zsun/anaconda3/lib/python3.8/site-packages/dask/dataframe/utils.py:367: FutureWarning: pandas.UInt64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.\n>   _numeric_index_types = (pd.Int64Index, pd.Float64Index, pd.UInt64Index)\n> the model in use is /groups/ESS3/zsun/firecasting/model/fc_lightgbm_model_v2_latest.pkl\n> current date:  2021-07-01 00:00:00\n> created folder for specific date: /groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting_with_new_yunyao_window_time_series_landuse//20210701\n> single_day_current_date =  2021-07-01 00:00:00\n> single_day_predict_end_date =  2021-07-08 00:00:00\n> predicting:  20210701\n> Read from original folder for current date: 20210701\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210701.txt\n> reading past files for 2021-06-30 00:00:00\n> reading from original folder\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210630.txt\n> reading past files for 2021-06-29 00:00:00\n> reading from original folder\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210629.txt\n> reading past files for 2021-06-28 00:00:00\n> reading from original folder\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210628.txt\n> reading past files for 2021-06-27 00:00:00\n> reading from original folder\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210627.txt\n> reading past files for 2021-06-26 00:00:00\n> reading from original folder\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210626.txt\n> reading past files for 2021-06-25 00:00:00\n> reading from original folder\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210625.txt\n> reading past files for 2021-06-24 00:00:00\n> reading from original folder\n> Reading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210624.txt\n> New time series dataframe:      LAT         LON    FRP  ...  VPD_7_days_ago   P_7_days_ago  FRP_7_days_ago\n> 0  24.5 -126.000000 -999.0  ...          -999.0  101879.484375          -999.0\n> 1  24.5 -125.899994 -999.0  ...          -999.0  101879.484375          -999.0\n> 2  24.5 -125.800003 -999.0  ...          -999.0  101873.890625          -999.0\n> 3  24.5 -125.699997 -999.0  ...          -999.0  101873.890625          -999.0\n> 4  24.5 -125.599998 -999.0  ...          -999.0  101867.890625          -999.0\n1a43,58\n> [5 rows x 67 columns]\n> Original df is created:  (156861, 67)\n> Original df filled the na with -9999 \n> X and y are loaded into memory for 20210701\n> the loaded model is:  LGBMRegressor(random_state=42)\n> Traceback (most recent call last):\n>   File \"<stdin>\", line 7, in <module>\n>   File \"/home/zsun/gw-workspace/454g33gsc4t/fc_model_predict_2weeks.py\", line 221, in predict_2weeks\n>     predict_2weeks_for_one_day(date_str, current_date, output_folder_full_path, loaded_model)\n>   File \"/home/zsun/gw-workspace/454g33gsc4t/fc_model_predict_2weeks.py\", line 178, in predict_2weeks_for_one_day\n>     predict_single_day_in_the_2weeks(single_day_current_date_str, date_str, specific_date_result_folder, loaded_model)\n>   File \"/home/zsun/gw-workspace/454g33gsc4t/fc_model_predict_2weeks.py\", line 77, in predict_single_day_in_the_2weeks\n>     y_pred = loaded_model.predict(X)\n>   File \"/home/zsun/anaconda3/lib/python3.8/site-packages/lightgbm/sklearn.py\", line 722, in predict\n>     raise ValueError(\"Number of features of the model must \"\n> ValueError: Number of features of the model must match the input. Model n_features_ is 65 and input n_features is 64 \nJob 1920749 has finished with state: JobState=FAILED\nSlurm job (1920749) has finished.\nPrint the job's output logs\nJobID           JobName      State ExitCode     MaxRSS               Start                 End \n------------ ---------- ---------- -------- ---------- ------------------- ------------------- \n1920749      fc_model_+     FAILED      1:0            2024-05-25T00:33:08 2024-05-25T00:33:24 \n1920749.bat+      batch     FAILED      1:0          0 2024-05-25T00:33:08 2024-05-25T00:33:24 \n1920749.ext+     extern  COMPLETED      0:0          0 2024-05-25T00:33:08 2024-05-25T00:33:24 \n/home/zsun/anaconda3/lib/python3.8/site-packages/dask/dataframe/utils.py:367: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.\n  _numeric_index_types = (pd.Int64Index, pd.Float64Index, pd.UInt64Index)\n/home/zsun/anaconda3/lib/python3.8/site-packages/dask/dataframe/utils.py:367: FutureWarning: pandas.Float64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.\n  _numeric_index_types = (pd.Int64Index, pd.Float64Index, pd.UInt64Index)\n/home/zsun/anaconda3/lib/python3.8/site-packages/dask/dataframe/utils.py:367: FutureWarning: pandas.UInt64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.\n  _numeric_index_types = (pd.Int64Index, pd.Float64Index, pd.UInt64Index)\nthe model in use is /groups/ESS3/zsun/firecasting/model/fc_lightgbm_model_v2_latest.pkl\ncurrent date:  2021-07-01 00:00:00\ncreated folder for specific date: /groups/ESS3/zsun/firecasting/data/output/output_xgboost_window_7_days_forecasting_with_new_yunyao_window_time_series_landuse//20210701\nsingle_day_current_date =  2021-07-01 00:00:00\nsingle_day_predict_end_date =  2021-07-08 00:00:00\npredicting:  20210701\nRead from original folder for current date: 20210701\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210701.txt\nreading past files for 2021-06-30 00:00:00\nreading from original folder\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210630.txt\nreading past files for 2021-06-29 00:00:00\nreading from original folder\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210629.txt\nreading past files for 2021-06-28 00:00:00\nreading from original folder\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210628.txt\nreading past files for 2021-06-27 00:00:00\nreading from original folder\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210627.txt\nreading past files for 2021-06-26 00:00:00\nreading from original folder\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210626.txt\nreading past files for 2021-06-25 00:00:00\nreading from original folder\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210625.txt\nreading past files for 2021-06-24 00:00:00\nreading from original folder\nReading /groups/ESS3/yli74/data/AI_Emis/new/firedata_20210624.txt\nNew time series dataframe:      LAT         LON    FRP  ...  VPD_7_days_ago   P_7_days_ago  FRP_7_days_ago\n0  24.5 -126.000000 -999.0  ...          -999.0  101879.484375          -999.0\n1  24.5 -125.899994 -999.0  ...          -999.0  101879.484375          -999.0\n2  24.5 -125.800003 -999.0  ...          -999.0  101873.890625          -999.0\n3  24.5 -125.699997 -999.0  ...          -999.0  101873.890625          -999.0\n4  24.5 -125.599998 -999.0  ...          -999.0  101867.890625          -999.0\n[5 rows x 67 columns]\nOriginal df is created:  (156861, 67)\nOriginal df filled the na with -9999 \nX and y are loaded into memory for 20210701\nthe loaded model is:  LGBMRegressor(random_state=42)\nTraceback (most recent call last):\n  File \"<stdin>\", line 7, in <module>\n  File \"/home/zsun/gw-workspace/454g33gsc4t/fc_model_predict_2weeks.py\", line 221, in predict_2weeks\n    predict_2weeks_for_one_day(date_str, current_date, output_folder_full_path, loaded_model)\n  File \"/home/zsun/gw-workspace/454g33gsc4t/fc_model_predict_2weeks.py\", line 178, in predict_2weeks_for_one_day\n    predict_single_day_in_the_2weeks(single_day_current_date_str, date_str, specific_date_result_folder, loaded_model)\n  File \"/home/zsun/gw-workspace/454g33gsc4t/fc_model_predict_2weeks.py\", line 77, in predict_single_day_in_the_2weeks\n    y_pred = loaded_model.predict(X)\n  File \"/home/zsun/anaconda3/lib/python3.8/site-packages/lightgbm/sklearn.py\", line 722, in predict\n    raise ValueError(\"Number of features of the model must \"\nValueError: Number of features of the model must match the input. Model n_features_ is 65 and input n_features is 64 \ncat: '/scratch/zsun/test_data_slurm-*-1920749.out': No such file or directory\nAll slurm job for fc_model_predict_2weeks_slurm_generated.sh finishes.\n",
+  "history_begin_time" : 1716611586583,
+  "history_end_time" : 1716612551157,
+  "history_notes" : null,
+  "history_process" : "55wou8",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "knu6hpw2nbd",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582534,
+  "history_end_time" : 1716612551157,
+  "history_notes" : null,
+  "history_process" : "uhet3k",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "idpc2pasfqj",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582536,
+  "history_end_time" : 1716612551157,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "g1030icku1x",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1716612551158,
+  "history_notes" : null,
+  "history_process" : "rg5g1a",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "ju3e32df1xc",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1716612551159,
+  "history_notes" : null,
+  "history_process" : "k09hf7",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "oont98fnt7q",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582541,
+  "history_end_time" : 1716612551161,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+}]

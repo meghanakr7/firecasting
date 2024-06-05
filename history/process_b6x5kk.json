@@ -1,0 +1,301 @@
+[{
+  "history_id" : "ykd9361a4v8",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717260625844,
+  "history_end_time" : 1717260625844,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "brya530q8we",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717258417405,
+  "history_end_time" : 1717260624666,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "cl3xcca1q7l",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717233644387,
+  "history_end_time" : 1717258424646,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "xqq5s2sl2u4",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717233051785,
+  "history_end_time" : 1717233634237,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "kiin0x967zz",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717183214971,
+  "history_end_time" : 1717233633765,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "y0gwwsta5cc",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654892,
+  "history_end_time" : 1717182654892,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "0oz70no58pr",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716612552458,
+  "history_end_time" : 1717233631814,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "idpc2pasfqj",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716611582536,
+  "history_end_time" : 1716612551157,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "ts4zy3trg97",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716610207109,
+  "history_end_time" : 1716611579212,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "i4ow04ivfwx",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716606646663,
+  "history_end_time" : 1716610196717,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "sddoaagraph",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716120710371,
+  "history_end_time" : 1716610159515,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "5ibltphvxgz",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716068762996,
+  "history_end_time" : 1716076012594,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "wte42doy3gv",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1716068608566,
+  "history_end_time" : 1716068760868,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "0iqh5l3q1ra",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468674,
+  "history_end_time" : 1714838057263,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "a6lwsj2eo8i",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714161440460,
+  "history_end_time" : 1714161440460,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "ywV4Em9GMLmY",
+  "history_input" : "import os\nimport pandas as pd\nfrom datetime import datetime, timedelta\n\n# this file contains all the function that are required by both the training data preparation and testing data preparation.\n\n# Folder path containing the text files\nfolder_path = '/groups/ESS3/yli74/data/AI_Emis/firedata'  # The folder yunyao provided with two years of txt files\nmy_file_path = \"/groups/ESS3/zsun/firecasting/data/others/\"\ngrid_to_window_mapper_csv = f\"{my_file_path}/grid_cell_fixed_order_mapper.csv\"\ntraining_data_folder = \"/groups/ESS3/zsun/firecasting/data/train/\"\n\n\ndef create_grid_to_window_mapper(the_folder_path = folder_path):\n  if os.path.exists(grid_to_window_mapper_csv):\n    print(f\"The file '{grid_to_window_mapper_csv}' exists.\")\n  else:\n    # this function will find the nearest 24 pixels for one pixel\n    # we only start from 2\n    # choose any txt \n    # Replace 'path_to_folder' with the path to your folder containing text files\n    txt_folder_path = f'{the_folder_path}/*.txt'\n    import glob\n    # Get a list of text files in the folder\n    text_files = glob.glob(txt_folder_path)\n\n    # Choose the first text file (you can modify this to select any specific file)\n    file_to_read = text_files[0]\n\n    # Read the chosen text file into a DataFrame\n    df = pd.read_csv(file_to_read)  # Modify delimiter as needed\n    print(df.head())\n    # Convert all values in the DataFrame to numeric\n    df = df.applymap(pd.to_numeric, errors='coerce')\n\n    print(df.columns)\n\n    # Use groupby to get unique pairs of LAT and LON\n    # Use groupby to get unique pairs of LAT and LON\n    unique_pairs = df.groupby(['LAT', ' LON']).size().reset_index(name='Count')\n    unique_pairs_df = unique_pairs[['LAT', ' LON']]\n    print(\"unique_pairs = \", unique_pairs_df)\n    # find the nearest 24 pixels for every single pixels\n    # Create a KDTree using 'LAT' and 'LON' columns\n    from scipy.spatial import cKDTree\n    tree = cKDTree(unique_pairs_df[['LAT', ' LON']])\n\n    # Find the 24 nearest neighbors for each point\n    distances, indices = tree.query(unique_pairs_df, k=25)\n\n    print(\"distances = \", distances)\n\n    # Extract the nearest 24 neighbors (excluding the point itself)\n    nearest_24 = indices[:, 1:]\n    print(\"nearest_24 = \", nearest_24)\n    print(\"nearest_24.shape = \", nearest_24.shape)\n\n    # Create column names for the new columns\n    new_columns = [f'Nearest_{i}' for i in range(1, 25)]\n\n    nearest_24_df = pd.DataFrame(nearest_24, columns=new_columns)\n\n    print(\"unique_pairs_df.shape: \", unique_pairs_df.shape)\n\n    # Merge the DataFrames row by row\n    result = pd.concat([unique_pairs_df.reset_index(drop=True), nearest_24_df.reset_index(drop=True)], axis=1)\n\n    print(result.head())\n    print(result.shape)\n\n    result.to_csv(grid_to_window_mapper_csv, index=False)\n    print(f\"grid to window mapper csv is saved to {grid_to_window_mapper_csv}\")\n    \ncreate_grid_to_window_mapper()\n    ",
+  "history_output" : "    LAT         LON   FRP    FWI  ...   RAIN   CAPE     ST     SM\n0  24.5 -126.000000   0.0 -999.0  ...    0.0  17.50 -999.0 -999.0\n1  24.5 -125.899994   0.0 -999.0  ...    0.0  17.50 -999.0 -999.0\n2  24.5 -125.800003   0.0 -999.0  ...    0.0  18.00 -999.0 -999.0\n3  24.5 -125.699997   0.0 -999.0  ...    0.0  18.00 -999.0 -999.0\n4  24.5 -125.599998   0.0 -999.0  ...    0.0  17.75 -999.0 -999.0\n[5 rows x 15 columns]\nIndex(['LAT', ' LON', ' FRP', ' FWI', ' VPD', ' HT', ' T', ' RH', ' U', ' V',\n       ' P', ' RAIN', ' CAPE', ' ST', ' SM'],\n      dtype='object')\nunique_pairs =           LAT         LON\n0       24.5 -126.000000\n1       24.5 -125.899994\n2       24.5 -125.800003\n3       24.5 -125.699997\n4       24.5 -125.599998\n...      ...         ...\n156856  50.5  -66.400002\n156857  50.5  -66.299995\n156858  50.5  -66.199997\n156859  50.5  -66.099998\n156860  50.5  -66.000000\n[156861 rows x 2 columns]\ndistances =  [[0.         0.099998   0.100006   ... 0.5        0.5        0.5000034 ]\n [0.         0.099991   0.099998   ... 0.41231032 0.41231396 0.42426336]\n [0.         0.099991   0.099998   ... 0.3605604  0.400002   0.400009  ]\n ...\n [0.         0.099991   0.099998   ... 0.3605604  0.399994   0.400001  ]\n [0.         0.099991   0.099998   ... 0.4123045  0.41231032 0.42426902]\n [0.         0.099991   0.099998   ... 0.4999922  0.5        0.5       ]]\nnearest_24 =  [[   601      1    602 ...   3005      5   1807]\n [     2    602      0 ...   2406   2404   1807]\n [     1    603      3 ...   1207   2406      6]\n ...\n [156257 156857 156859 ... 155053 154454 156854]\n [156258 156860 156858 ... 154454 156254 155053]\n [156259 156859 156258 ... 154453 156855 153855]]\nnearest_24.shape =  (156861, 24)\nunique_pairs_df.shape:  (156861, 2)\n    LAT         LON  Nearest_1  ...  Nearest_22  Nearest_23  Nearest_24\n0  24.5 -126.000000        601  ...        3005           5        1807\n1  24.5 -125.899994          2  ...        2406        2404        1807\n2  24.5 -125.800003          1  ...        1207        2406           6\n3  24.5 -125.699997        604  ...        1808        1804        1208\n4  24.5 -125.599998        605  ...        1209        1203        1809\n[5 rows x 26 columns]\n(156861, 26)\ngrid to window mapper csv is saved to /groups/ESS3/zsun/firecasting/data/others//grid_cell_fixed_order_mapper.csv\n",
+  "history_begin_time" : 1714160309906,
+  "history_end_time" : 1714160320143,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : null,
+  "indicator" : "Done"
+},{
+  "history_id" : "xv5fssk1q8p",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1713966604352,
+  "history_end_time" : 1713966604352,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "u10373v6r5y",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1713935811085,
+  "history_end_time" : 1713935811085,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "7nj0ge4v3iv",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1712452760505,
+  "history_end_time" : 1712452760505,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "mdj7urkjhee",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1712452402389,
+  "history_end_time" : 1712452749962,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "y93iizadc3q",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1712445947148,
+  "history_end_time" : 1712445947148,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "ti0olfz6wvd",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711723378022,
+  "history_end_time" : 1711723378022,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "7vu7q40dm1o",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711722163452,
+  "history_end_time" : 1711723321978,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "w0yqbriqcht",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711203851072,
+  "history_end_time" : 1712452724076,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "3iyc9e1nf1q",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711136729445,
+  "history_end_time" : 1711136729445,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "1yl1azivnj0",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1711136573124,
+  "history_end_time" : 1711136662818,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "857965x9fh1",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709930548096,
+  "history_end_time" : 1712452725019,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "vtumvymc03p",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709930050153,
+  "history_end_time" : 1709930509962,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "o6m3xk96d5x",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709444795635,
+  "history_end_time" : 1712452725798,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "6n0591g296v",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1709444438279,
+  "history_end_time" : 1709444687349,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},]

@@ -13,7 +13,7 @@ from rasterio.transform import from_origin
 from rasterio.enums import Resampling
 from scipy.interpolate import griddata
 
-output_folder = f"/groups/ESS3/zsun/firecasting/data/output/{output_folder_name}/20210714/"
+output_folder = f"/groups/ESS3/zsun/firecasting/data/output/{output_folder_name}/"
 sample_lat_lon_csv = "/groups/ESS3/zsun/firecasting/data/others/sample_lat_lon.csv"
 
 
@@ -29,6 +29,10 @@ def save_predicted_frp_to_geotif(csv_file, sample_lat_lon_df):
     """
     Get the ML results ready for public download and access
     """
+    if os.path.exists(f'{csv_file}_output.tif'):
+      print(f'{csv_file}_output.tif exists. skipping..')
+      return
+    
     # Read CSV into GeoDataFrame
     df = pd.read_csv(csv_file)
     if 'LAT' not in df.columns:
@@ -91,6 +95,12 @@ def save_predicted_frp_to_geotif(csv_file, sample_lat_lon_df):
     
 
 def plot_png(file_path, sample_lat_lon_df):
+    
+    res_png_path = f"{file_path}.png"
+    if os.path.exists(res_png_path):
+      print(f'{res_png_path} exists. skipping..')
+      return
+    
     # Read CSV into a DataFrame
     df = pd.read_csv(file_path)
     print(df.head())
@@ -173,7 +183,7 @@ def plot_png(file_path, sample_lat_lon_df):
 
     plt.tight_layout()
 
-    res_png_path = f"{file_path}.png"
+    
     plt.savefig(res_png_path)
     print(f"test image is saved at {res_png_path}")
     plt.close()
@@ -181,14 +191,20 @@ def plot_png(file_path, sample_lat_lon_df):
 
 def plot_images():
     # List all CSV files in the directory
-    csv_files = [f for f in os.listdir(output_folder) if f.endswith('.txt') and f.startswith('firedata_')]
+    
+    csv_files = []
+    for root, dirs, files in os.walk(output_folder):
+        for file in files:
+            if file.startswith("firedata_") and file.endswith(".txt"):
+                csv_files.append(os.path.join(root, file))
+        
     
     sample_lat_lon_df = pd.read_csv(sample_lat_lon_csv)
     
     # Iterate through each CSV file
-    for csv_file in csv_files:
+    for file_path in csv_files:
         # Construct the full file path
-        file_path = os.path.join(output_folder, csv_file)
+        #file_path = os.path.join(output_folder, csv_file)
         plot_png(file_path, sample_lat_lon_df)
         save_predicted_frp_to_geotif(file_path, sample_lat_lon_df)
         save_predicted_frp_to_standard_netcdf(file_path, sample_lat_lon_df)

@@ -40,11 +40,7 @@ from fc_test_data_preparation import prepare_testing_data_for_2_weeks_forecastin
 from fc_train_data_preprocess import columns_to_check
 import sys
 from fc_model_creation import model_path
-         
-log_file = open('/scratch/zsun/output.log', 'w')
-sys.stdout = log_file
-print("This will be written to the file")
-sys.stdout = sys.__stdout__  # Reset stdout to its default value
+
 
 forecasting_days = 7
 
@@ -56,7 +52,7 @@ warnings.filterwarnings("ignore", message="DataFrame is highly fragmented")
 # model_path="/groups/ESS3/zsun/firecasting/model/fc_xgb_model_v1_weighted_one_month_2020_maxdepth_15_slurm.pkl"
 #model_path="/groups/ESS3/zsun/firecasting/model/fc_xgb_model_v1_weighted_7_days_with_window_July2020_weighted_slurm_test.pkl"
 #model_path = #"/groups/ESS3/zsun/firecasting/model/fc_xgb_model_v1_weighted_one_year_2020.pkl"
-output_folder_name = f"output_xgboost_window_{forecasting_days}_days_forecasting"
+output_folder_name = f"output_xgboost_window_{forecasting_days}_days_forecasting_with_new_yunyao_window_time_series_landuse_vhi"
 # output_folder_name = "output_xgboost_202007"
 
 def remove_element_by_value(input_list, value_to_remove):
@@ -80,16 +76,20 @@ def predict_single_day_in_the_2weeks(single_day_current_date_str, date_str, spec
     print("the loaded model is: ", loaded_model)
     y_pred = loaded_model.predict(X)
     print(f"Prediction for {single_day_current_date_str} of start day {date_str} is finished")
-    y_pred[y_pred < 0] = 0  # if FRP is lower than 5, make it 0
-
+    
+    #y_pred[y_pred < 0] = 0  # if FRP is lower than 5, make it 0
+    
     # merge the input and output into one df
     y_pred_df = pd.DataFrame(y_pred, columns=["Predicted_FRP"])
+    
+    # inverse of log10
+    y_pred_df["y_pred_df"] = np.power(10, y_pred_df["Predicted_FRP"]) - 1e-2
 
     merged_df = X
-    merged_df["Predicted_FRP"] = y_pred
+    merged_df["Predicted_FRP"] = y_pred_df["y_pred_df"]
     
     # first remove all the rows with no fire nearby or in the past
-    new_columns_to_check = remove_element_by_value(columns_to_check, " FRP")
+    new_columns_to_check = remove_element_by_value(columns_to_check, "FRP")
     print("new columns to check: ", new_columns_to_check)
     print("current merged_df columns: ", merged_df.columns)
     # merged_df = merged_df[merged_df[new_columns_to_check].eq(0).all(axis=1)]
@@ -97,7 +97,11 @@ def predict_single_day_in_the_2weeks(single_day_current_date_str, date_str, spec
     # Define a custom function to update 'Predicted_FRP' column
     def update_FRP(row):
       # if the pixel is in ocean or predicted value is negative, FRP is 0
-      if row[' VPD'] < 0 or row[' HT'] < 0 or row['Predicted_FRP'] < 0:
+      if row['VPD'] < 0 or row['HT'] < 0 or row['Predicted_FRP'] < 0:
+        return 0
+      
+      # only use the values for cells that have fire in itself or neighbours
+      if (row[columns_to_check] == 0).all():
         return 0
       
       return row['Predicted_FRP']
@@ -105,7 +109,8 @@ def predict_single_day_in_the_2weeks(single_day_current_date_str, date_str, spec
     # Apply the custom function to update 'FRP' column
     merged_df['Predicted_FRP'] = merged_df.apply(update_FRP, axis=1)
     
-    merged_df.loc[merged_df[new_columns_to_check].eq(0).all(axis=1), "Predicted_FRP"] = 0
+    # This line is wrong
+    # merged_df.loc[merged_df[new_columns_to_check].eq(0).all(axis=1), "Predicted_FRP"] = 0
 
     predict_file = f'{specific_date_result_folder}/firedata_{single_day_current_date_str}_predicted.txt'
     # save the df to a csv for plotting

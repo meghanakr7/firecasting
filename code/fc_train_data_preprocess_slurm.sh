@@ -19,8 +19,8 @@ cat > ${SCRIPT_NAME} << EOF
 #SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`
 #SBATCH -n 1               # Number of tasks
 #SBATCH -c 12               # Number of CPUs per task (threads)
-#SBATCH --mem=50G          # Memory per node (use units like G for gigabytes) - this job must need 200GB lol
-#SBATCH -t 0-01:00         # Runtime in D-HH:MM format
+#SBATCH --mem=20G          # Memory per node (use units like G for gigabytes) - this job must need 200GB lol
+#SBATCH -t 0-10:00         # Runtime in D-HH:MM format
 ## Slurm can send you updates via email
 #SBATCH --mail-type=FAIL  # BEGIN,END,FAIL         # ALL,NONE,BEGIN,END,FAIL,REQUEUE,..
 #SBATCH --mail-user=zsun@gmu.edu     # Put your GMU email address here
@@ -32,11 +32,51 @@ python -u << INNER_EOF
 
 from fc_train_data_preprocess import prepare_training_data
 
+from datetime import datetime, timedelta
+import pandas as pd
+
 if __name__ == "__main__":
   # this is today, and we want to use all the meteo data of today and FRP data of day -7 - yesterday to predict today's FRP. 
-  training_end_date = "20200715" # the last day of the 7 day history
-  training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/all_cells/"
-  prepare_training_data(training_end_date, training_data_folder)
+  
+
+  # Start date
+  start_date = datetime(2020, 7, 15)
+
+  # End date
+  end_date = datetime(2020, 7, 18)
+
+  # Define the step size for traversal
+  step = timedelta(days=1)
+  
+  training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_2/"
+
+  # Traverse the dates
+  current_date = start_date
+  while current_date <= end_date:
+      print("Preparing for date : ", current_date.strftime('%Y%m%d'))  # Print date in YYYYMMDD format
+      
+      training_end_date = current_date.strftime('%Y%m%d')
+      #training_end_date = "20201030" # the last day of the 7 day history
+      prepare_training_data(training_end_date, training_data_folder)
+      current_date += step
+      
+      file_path = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_2/20200715_time_series_with_window.csv"
+
+      #file_path = "/groups/ESS3/yli74/data/AI_Emis/firedata/firedata_20200715.txt"
+
+      df = pd.read_csv(file_path)
+
+      print(df.head())
+
+      # Assuming you want to calculate statistics of a column named 'column_name'
+      column_name = ' FRP'
+
+      # Basic statistics
+      stats = df[column_name].describe()
+      
+      if df[column_name].max() == 0:
+        print("The maximum value of the column is zero.")
+        raise Exception("The maximum value of the column is zero.")
 
 INNER_EOF
 

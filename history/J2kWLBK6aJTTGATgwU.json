@@ -1,0 +1,131 @@
+[{
+  "history_id" : "w2or1d7ndjd",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468649,
+  "history_end_time" : 1714838057255,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "iyrc0ggjrt2",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468658,
+  "history_end_time" : 1714838057256,
+  "history_notes" : null,
+  "history_process" : "w4lpt8",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "esnei08havl",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468659,
+  "history_end_time" : 1714838057258,
+  "history_notes" : null,
+  "history_process" : "521ngk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "ooxpt7atnq7",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468660,
+  "history_end_time" : 1714838057258,
+  "history_notes" : null,
+  "history_process" : "x8kqk7",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "22euprin7fj",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468660,
+  "history_end_time" : 1714838057259,
+  "history_notes" : null,
+  "history_process" : "wjq4fr",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "kq7qynqw1ae",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468661,
+  "history_end_time" : 1714838057260,
+  "history_notes" : null,
+  "history_process" : "l4eb73",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "u8jxa5ayym1",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468661,
+  "history_end_time" : 1714838057260,
+  "history_notes" : null,
+  "history_process" : "pv7d8l",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "sdlz7p4027w",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468662,
+  "history_end_time" : 1714838057261,
+  "history_notes" : null,
+  "history_process" : "xku47i",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "g2tz4r8qau8",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468670,
+  "history_end_time" : 1714838057261,
+  "history_notes" : null,
+  "history_process" : "k84mqm",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "xbfvp33eart",
+  "history_input" : "#!/bin/bash\n\necho \"start to run fc_model_predict_2weeks.sh\"\npwd\n\n# clean up the old log\n> /home/zsun/fc_model_predict_2weeks.out\n> /home/zsun/fc_model_predict_2weeks.err\n\n# Specify the name of the script you want to submit\nSCRIPT_NAME=\"fc_model_predict_2weeks_slurm_generated.sh\"\necho \"write the slurm script into ${SCRIPT_NAME}\"\ncat > ${SCRIPT_NAME} << EOF\n#!/bin/bash\n#SBATCH -J fc_model_predict_2weeks       # Job name\n#SBATCH --qos=qtong             #\n#SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test\n#SBATCH --time=120:00:00         # walltime\n#SBATCH --nodes=1               # Number of nodes I want to use, max is 15 for lin-group, each node has 48 cores\n#SBATCH --ntasks-per-node=12    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96\n#SBATCH --mail-user=zsun@gmu.edu    #Email account\n#SBATCH --mail-type=FAIL           #When to email\n#SBATCH --mem=20G\n#SBATCH --cores-per-socket=8\n#SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`\n#SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`\n\n\n# Activate your customized virtual environment\nsource /home/zsun/anaconda3/bin/activate\n\n# Call the Python script using process substitution\npython -u << INNER_EOF\n\nfrom fc_model_predict_2weeks import predict_2weeks\n\nstart_date = \"20210714\"\nend_date = \"20210714\"\n\npredict_2weeks(start_date, end_date)\n\n\nINNER_EOF\n\nEOF\n\n# Submit the Slurm job and wait for it to finish\necho \"sbatch ${SCRIPT_NAME}\"\n# should have another check. if there is another job running, should cancel it before submitting a new job.\n\n# Find and cancel existing running jobs with the same script name\n#existing_jobs=$(squeue -h -o \"%A %j\" -u $(whoami) | awk -v script=\"$SCRIPT_NAME\" '$2 == script {print $1}')\n\n# if [ -n \"$existing_jobs\" ]; then\n#     echo \"Canceling existing jobs with the script name '$SCRIPT_NAME'...\"\n#     for job_id in $existing_jobs; do\n#         scancel $job_id\n#     done\n# else\n#     echo \"No existing jobs with the script name '$SCRIPT_NAME' found.\"\n# fi\n\n# Submit the Slurm job\njob_id=$(sbatch ${SCRIPT_NAME} | awk '{print $4}')\necho \"job_id=\"${job_id}\n\nif [ -z \"${job_id}\" ]; then\n    echo \"job id is empty. something wrong with the slurm job submission.\"\n    exit 1\nfi\n\n# Wait for the Slurm job to finish\nfile_name=$(find /scratch/zsun -name '*'${job_id}'.out' -print -quit)\nprevious_content=$(cat file_name)\nexit_code=0\nwhile true; do\n    # Capture the current content\\\n    #echo ${job_id}\n    #file_name=$(find /scratch/zsun -name '*'${job_id}'.out' -print -quit)\n    #echo \"file_name=\"$file_name\n    current_content=$(<\"${file_name}\")\n    #echo \"current_content = \"$current_content\n\n    # Compare current content with previous content\n    diff_result=$(diff <(echo \"$previous_content\") <(echo \"$current_content\"))\n    # Check if there is new content\n    if [ -n \"$diff_result\" ]; then\n        # Print the newly added content\n        #echo \"New content added:\"\n        echo \"$diff_result\"\n        #echo \"---------------------\"\n    fi\n    # Update previous content\n    previous_content=\"$current_content\"\n\n\n    job_status=$(scontrol show job ${job_id} | awk '/JobState=/{print $1}')\n    #echo \"job_status \"$job_status\n    #if [[ $job_status == \"JobState=COMPLETED\" ]]; then\n    #    break\n    #fi\n    if [[ $job_status == *\"COMPLETED\"* ]]; then\n        echo \"Job $job_id has finished with state: $job_status\"\n        break;\n    elif [[ $job_status == *\"CANCELLED\"* || $job_status == *\"FAILED\"* || $job_status == *\"TIMEOUT\"* || $job_status == *\"NODE_FAIL\"* || $job_status == *\"PREEMPTED\"* || $job_status == *\"OUT_OF_MEMORY\"* ]]; then\n        echo \"Job $job_id has finished with state: $job_status\"\n        exit_code=1\n        break;\n    fi\n    sleep 10  # Adjust the sleep interval as needed\ndone\n\necho \"Slurm job ($job_id) has finished.\"\n\necho \"Print the job's output logs\"\nsacct --format=JobID,JobName,State,ExitCode,MaxRSS,Start,End -j $job_id\nfind /scratch/zsun/ -type f -name \"*${job_id}.out\" -exec cat {} \\;\ncat /scratch/zsun/test_data_slurm-*-$job_id.out\n\necho \"All slurm job for ${SCRIPT_NAME} finishes.\"\n\nexit $exit_code\n",
+  "history_output" : "start to run fc_model_predict_2weeks.sh\n/home/zsun/gw-workspace/xbfvp33eart\nwrite the slurm script into fc_model_predict_2weeks_slurm_generated.sh\nsbatch fc_model_predict_2weeks_slurm_generated.sh\njob_id=1843621\ncat: file_name: No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n/home/zsun/gw-workspace/xbfvp33eart/gw-aW9xhIlGP1VT0ypSwm6aIbFzV9-xbfvp33eart.sh: line 81: : No such file or directory\n",
+  "history_begin_time" : 1714808473031,
+  "history_end_time" : 1714838057262,
+  "history_notes" : null,
+  "history_process" : "55wou8",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "ur20qh5bwn3",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468673,
+  "history_end_time" : 1714838057262,
+  "history_notes" : null,
+  "history_process" : "uhet3k",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "0iqh5l3q1ra",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468674,
+  "history_end_time" : 1714838057263,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "hff78r7w0d7",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1714808468676,
+  "history_end_time" : 1714838057264,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+}]

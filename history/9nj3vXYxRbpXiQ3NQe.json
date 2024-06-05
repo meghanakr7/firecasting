@@ -1,0 +1,171 @@
+[{
+  "history_id" : "0idg8iezg9o",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654826,
+  "history_end_time" : 1717182654826,
+  "history_notes" : null,
+  "history_process" : "1jepv8",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "62mw71n9blj",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654848,
+  "history_end_time" : 1717182654848,
+  "history_notes" : null,
+  "history_process" : "w4lpt8",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "f26ikiy987g",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654850,
+  "history_end_time" : 1717182654850,
+  "history_notes" : null,
+  "history_process" : "521ngk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "9q9ld9b88uh",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654855,
+  "history_end_time" : 1717182654855,
+  "history_notes" : null,
+  "history_process" : "x8kqk7",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "yb3uznmfqxl",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654857,
+  "history_end_time" : 1717182654857,
+  "history_notes" : null,
+  "history_process" : "wjq4fr",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "z8ior7nb8mt",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654859,
+  "history_end_time" : 1717182654859,
+  "history_notes" : null,
+  "history_process" : "l4eb73",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "oavs0jdiufl",
+  "history_input" : "#!/bin/bash\n\n# Specify the name of the script you want to submit\nSCRIPT_NAME=\"fc_model_creation_train_slurm_generated.sh\"\necho \"write the slurm script into ${SCRIPT_NAME}\"\ncat > ${SCRIPT_NAME} << EOF\n#!/bin/bash\n#SBATCH -J fc_model_creation_train_slurm       # Job name\n#SBATCH --qos=qtong             #\n#SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test\n#SBATCH --time=120:00:00         # walltime\n#SBATCH --nodes=1               # Number of nodes I want to use, max is 15 for lin-group, each node has 48 cores\n#SBATCH --ntasks-per-node=12    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96\n#SBATCH --mail-user=zsun@gmu.edu    #Email account\n#SBATCH --mail-type=FAIL           #When to email\n#SBATCH --mem=20G\n#SBATCH --cores-per-socket=8\n#SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`\n#SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`\n\n# Activate your customized virtual environment\nsource /home/zsun/anaconda3/bin/activate\n\npython -u << INNER_EOF\n\nfrom fc_model_creation import train_model\n\n# Define your start and end dates as strings\nstart_date_str = \"20200109\"\nend_date_str = \"20201231\"\ntraining_data_folder = \"/groups/ESS3/zsun/firecasting/data/train/all_cells_new_with_yunyao_window_data_time_series_landuse_vhi/\"\n# all_cells_new_6 - this training will not use weight. Directly train the model on all rows because we already filterred out the non-fire cells.\ntrain_model(start_date_str, end_date_str, training_data_folder)\nprint(\"all training on {training_data_folder} is done\")\n\n\nINNER_EOF\n\nEOF\n\n# Submit the Slurm job and wait for it to finish\necho \"sbatch ${SCRIPT_NAME}\"\n\n# Submit the Slurm job\njob_id=$(sbatch ${SCRIPT_NAME} | awk '{print $4}')\necho \"job_id=\"${job_id}\n\nif [ -z \"${job_id}\" ]; then\n    echo \"job id is empty. something wrong with the slurm job submission.\"\n    exit 1\nfi\n\n# Wait for the Slurm job to finish\nfile_name=$(find /scratch/zsun -name '*'${job_id}'.out' -print -quit)\nprevious_content=$(<\"${file_name}\")\nwhile true; do\n    # Capture the current content\n    file_name=$(find /scratch/zsun -name '*'${job_id}'.out' -print -quit)\n    current_content=$(<\"${file_name}\")\n\n    # Compare current content with previous content\n    diff_result=$(diff <(echo \"$previous_content\") <(echo \"$current_content\"))\n    # Check if there is new content\n    if [ -n \"$diff_result\" ]; then\n        echo \"$diff_result\"\n    fi\n    # Update previous content\n    previous_content=\"$current_content\"\n\n\n    job_status=$(scontrol show job ${job_id} | awk '/JobState=/{print $1}')\n    if [[ $job_status == *\"COMPLETED\"* || $job_status == *\"CANCELLED\"* || $job_status == *\"FAILED\"* || $job_status == *\"TIMEOUT\"* || $job_status == *\"NODE_FAIL\"* || $job_status == *\"PREEMPTED\"* || $job_status == *\"OUT_OF_MEMORY\"* ]]; then\n        echo \"Job $job_id has finished with state: $job_status\"\n        break;\n    fi\n    sleep 100  # Adjust the sleep interval as needed\ndone\n\necho \"Slurm job ($job_id) has finished.\"\n\necho \"Print the job's output logs\"\nsacct --format=JobID,JobName,State,ExitCode,MaxRSS,Start,End -j $job_id\n#find /scratch/zsun/ -type f -name \"*${job_id}.out\" -exec cat {} \\;\n\necho \"All slurm job for ${SCRIPT_NAME} finishes.\"\n\njob_status=$(scontrol show job ${job_id} | awk '/JobState=/{print $1}')\nif [[ $job_status != *\"COMPLETED\"* ]]; then\n    exit 1\nfi\n\n\n",
+  "history_output" : "write the slurm script into fc_model_creation_train_slurm_generated.sh\nsbatch fc_model_creation_train_slurm_generated.sh\njob_id=1940589\n/home/zsun/gw-workspace/oavs0jdiufl/gw-hSgHnfEiP695f1nM8lp6oOlGRY-oavs0jdiufl.sh: line 55: : No such file or directory\n/home/zsun/gw-workspace/oavs0jdiufl/gw-hSgHnfEiP695f1nM8lp6oOlGRY-oavs0jdiufl.sh: line 59: : No such file or directory\n/home/zsun/gw-workspace/oavs0jdiufl/gw-hSgHnfEiP695f1nM8lp6oOlGRY-oavs0jdiufl.sh: line 59: : No such file or directory\n/home/zsun/gw-workspace/oavs0jdiufl/gw-hSgHnfEiP695f1nM8lp6oOlGRY-oavs0jdiufl.sh: line 59: : No such file or directory\n/home/zsun/gw-workspace/oavs0jdiufl/gw-hSgHnfEiP695f1nM8lp6oOlGRY-oavs0jdiufl.sh: line 59: : No such file or directory\nJob 1940589 has finished with state: JobState=CANCELLED\nSlurm job (1940589) has finished.\nPrint the job's output logs\nJobID           JobName      State ExitCode     MaxRSS               Start                 End \n------------ ---------- ---------- -------- ---------- ------------------- ------------------- \n1940589      fc_model_+ CANCELLED+      0:0                           None 2024-05-31T15:15:34 \nAll slurm job for fc_model_creation_train_slurm_generated.sh finishes.\n",
+  "history_begin_time" : 1717182656232,
+  "history_end_time" : 1717182961354,
+  "history_notes" : null,
+  "history_process" : "pv7d8l",
+  "host_id" : "100001",
+  "indicator" : "Failed"
+},{
+  "history_id" : "xspl7tqeroq",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654868,
+  "history_end_time" : 1717182654868,
+  "history_notes" : null,
+  "history_process" : "xku47i",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "zmjqrme8vzv",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717182961372,
+  "history_notes" : null,
+  "history_process" : "dp0hiw",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "2wei9ctn4iw",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717182961392,
+  "history_notes" : null,
+  "history_process" : "b3cx6j",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "5by00k7321x",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654880,
+  "history_end_time" : 1717182654880,
+  "history_notes" : null,
+  "history_process" : "k84mqm",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "bshfizzbt2c",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717182961364,
+  "history_notes" : null,
+  "history_process" : "55wou8",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "ryfb6goc772",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654887,
+  "history_end_time" : 1717182654887,
+  "history_notes" : null,
+  "history_process" : "uhet3k",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "y0gwwsta5cc",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654892,
+  "history_end_time" : 1717182654892,
+  "history_notes" : null,
+  "history_process" : "b6x5kk",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+},{
+  "history_id" : "26o05pri6s1",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717182961380,
+  "history_notes" : null,
+  "history_process" : "rg5g1a",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "wr7ji5opz6x",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717182961386,
+  "history_notes" : null,
+  "history_process" : "k09hf7",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "cg4p3frr688",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717182654904,
+  "history_end_time" : 1717182654904,
+  "history_notes" : null,
+  "history_process" : "r7g97f",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+}]
