@@ -17,11 +17,11 @@ cat > ${SCRIPT_NAME} << EOF
 #SBATCH --partition=contrib     # partition (queue): debug, interactive, contrib, normal, orc-test
 #SBATCH --time=24:00:00         # walltime
 #SBATCH --nodes=1               # Number of nodes I want to use, max is 15 for lin-group, each node has 48 cores
-#SBATCH --ntasks-per-node=12    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96
+#SBATCH --ntasks-per-node=4    # Number of MPI tasks, multiply number of nodes with cores per node. 2*48=96
 #SBATCH --mail-user=zsun@gmu.edu    #Email account
 #SBATCH --mail-type=FAIL           #When to email
-#SBATCH --mem=20G
-#SBATCH --cores-per-socket=8
+#SBATCH --mem=10G
+#SBATCH --cores-per-socket=4
 #SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`
 #SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`
 

@@ -38,20 +38,20 @@ def save_predicted_frp_to_geotif(csv_file, sample_lat_lon_df):
     if 'LAT' not in df.columns:
       # Merge 'lat' and 'lon' columns from df2 into df1
       df["LAT"] = sample_lat_lon_df["LAT"]
-      df[" LON"] = sample_lat_lon_df[" LON"]
+      df["LON"] = sample_lat_lon_df["LON"]
 
     # Create GeoDataFrame with Point geometries
     #geometry = [Point(lon, lat) for lon, lat in zip(df[' LON'], df['LAT'])]
     #gdf = gpd.GeoDataFrame(df, geometry=geometry, crs='EPSG:4326')
     
     # Create a GeoDataFrame from the DataFrame
-    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df[" LON"], df["LAT"]), crs='EPSG:4326')
+    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df["LON"], df["LAT"]), crs='EPSG:4326')
 	
     # Set up rasterization parameters
     # Define pixel size and latitude/longitude bounds
     pixel_size = 0.01  # Adjust as needed
     min_lat, max_lat = gdf['LAT'].min(), gdf['LAT'].max()
-    min_lon, max_lon = gdf[' LON'].min(), gdf[' LON'].max()
+    min_lon, max_lon = gdf['LON'].min(), gdf['LON'].max()
     
     print("min_lat = ", min_lat)
     print("max_lat = ", max_lat)
@@ -70,11 +70,11 @@ def save_predicted_frp_to_geotif(csv_file, sample_lat_lon_df):
     yi = np.linspace(max_lat, min_lat, height)
     xi, yi = np.meshgrid(xi, yi)
     
-    print("xi = ", xi)
-    print("yi = ", yi)
+    # print("xi = ", xi)
+    # print("yi = ", yi)
 
     # Interpolate data onto the regular grid
-    zi = griddata((gdf[' LON'], gdf['LAT']), gdf['Predicted_FRP'], (xi, yi), method='linear')
+    zi = griddata((gdf['LON'], gdf['LAT']), gdf['Predicted_FRP'], (xi, yi), method='linear')
 
     # Create a GeoTIFF from the interpolated data
     with rasterio.open(f'{csv_file}_output.tif', 
@@ -103,12 +103,12 @@ def plot_png(file_path, sample_lat_lon_df):
     
     # Read CSV into a DataFrame
     df = pd.read_csv(file_path)
-    print(df.head())
+    # print(df.head())
 
     if 'LAT' not in df.columns:
       # Merge 'lat' and 'lon' columns from df2 into df1
       df["LAT"] = sample_lat_lon_df["LAT"]
-      df[" LON"] = sample_lat_lon_df[" LON"]
+      df["LON"] = sample_lat_lon_df["LON"]
 
     real_col_num = len(df.columns) - 2
     num_rows = int(np.ceil(np.sqrt(real_col_num)))
@@ -119,10 +119,10 @@ def plot_png(file_path, sample_lat_lon_df):
     # Flatten the axs array if it's more than 1D
     axs = np.array(axs).flatten()
     
-    for i in range(len(df.columns)):
+    for i in range(len(df.columns)-2):
         col_name = df.columns[i]
         
-        if col_name in ["LAT", " LON"]:
+        if col_name in ["LAT", "LON"]:
           continue
         
         ax = axs[i]
@@ -137,7 +137,7 @@ def plot_png(file_path, sample_lat_lon_df):
           norm = Normalize(vmin=min_value, vmax=max_value)
 
           ax.scatter(
-            df[' LON'], 
+            df['LON'], 
             df['LAT'], 
             c=df[col_name], 
             cmap=cmap, 
@@ -157,7 +157,7 @@ def plot_png(file_path, sample_lat_lon_df):
           new_norm = Normalize(vmin=min_value, vmax=max_value)
           sm = ScalarMappable(cmap=cmap, norm=new_norm)
           ax.scatter(
-            df[' LON'], 
+            df['LON'], 
             df['LAT'], 
             c=df[col_name], 
             cmap=cmap, 

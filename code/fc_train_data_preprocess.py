@@ -155,7 +155,8 @@ def prepare_training_data(target_date, training_data_folder=training_data_folder
   if os.path.exists(train_file_path):
     print(f"File {train_file_path} exists")
     existing_df = pd.read_csv(train_file_path)
-    X = existing_df.drop([target_col, 'LAT', 'LON'], axis=1)
+    # X = existing_df.drop([target_col, 'LAT', 'LON'], axis=1)
+    X = existing_df
     y = existing_df[target_col]
   else:
     print("File does not exist")
@@ -186,7 +187,7 @@ def prepare_training_data(target_date, training_data_folder=training_data_folder
     
     df.to_csv(train_file_path, index=False)
     # Define features and target
-    X = df.drop([target_col, 'LAT', 'LON'], axis=1)
+    X = df.drop([target_col,], axis=1)
     # don't use neighbors 
 #     X = df.drop([target_col, 'LAT', ' LON', 'Nearest_1', 'Nearest_2',
                  

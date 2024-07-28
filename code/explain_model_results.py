@@ -43,7 +43,7 @@ def plot_feature_importance():
 #  'FRP_1_days_ago', 'FRP_2_days_ago', 'FRP_3_days_ago', 'FRP_4_days_ago',
 #  'FRP_5_days_ago', 'FRP_6_days_ago', 'FRP_7_days_ago']
 
-    feature_names = ['FWI', 'VPD', 'HT', 'T', 'RH', 'U', 'V', 'P', 'RAIN', 'CAPE', 'ST',
+    feature_names = ['LAT', 'LON', 'FWI', 'VPD', 'HT', 'T', 'RH', 'U', 'V', 'P', 'RAIN', 'CAPE', 'ST',
 'SM', 'Nearest_1', 'Nearest_2', 'Nearest_3', 'Nearest_4', 'Nearest_5',
 'Nearest_6', 'Nearest_7', 'Nearest_8', 'Nearest_9', 'Nearest_10',
 'Nearest_11', 'Nearest_12', 'Nearest_13', 'Nearest_14', 'Nearest_15',

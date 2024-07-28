@@ -41,7 +41,6 @@ def read_original_txt_files(datestr):
   # Concatenate all chunks into a single DataFrame
   final_df = pd.concat(df_list, ignore_index=True)
   
-  
   # Display the DataFrame
   #print(final_df)
   return final_df
@@ -70,31 +69,19 @@ def read_txt_from_predicted_folder(target_datestr, current_prediction_output_fol
 #   df_list.append(file_df)
   #total_rows += len(file_df)
 
-  #if total_rows >= row_limit:
-  #    break  # Stop reading files if row limit is reached
-  
-  
   # Concatenate all chunks into a single DataFrame
   #final_df = pd.concat(df_list, ignore_index=True)
   final_df = file_df
-  print("current final_df head: ", final_df.head())
+  #print("current final_df head: ", final_df.head())
   print("renaming Predicted_FRP to FRP")
   final_df['FRP'] = final_df['Predicted_FRP']
   # Remove the original column 'A'
   print("remove the current predicted_frp")
   final_df.drop(columns=['Predicted_FRP'], inplace=True)
-
-
-  # Display the DataFrame
-  #print(final_df)
   return final_df
 
 
 def add_window_grid_cells(row, original_df, grid_to_window_mapper_df):
-    # print("add_window_grid_cells grid_to_window_mapper_df.columns = ", grid_to_window_mapper_df.columns)
-    # Implement your logic for adding window grid cells
-    #print("current index: ", row['LAT'].astype(str) + "_" + row[' LON'].astype(str))
-    # print("row values: ", row)
     result = grid_to_window_mapper_df.loc[row['LAT'], row['LON']]
     values = []
     for column in grid_to_window_mapper_df.columns:
@@ -165,7 +152,7 @@ def get_one_day_time_series_for_2_weeks_testing_data(target_day, current_start_d
         #print("df.shape = ", df.shape)
         #df[grid_to_window_mapper_df.columns] = new_df
 
-        print("New time series dataframe: ", df.head())
+        #print("New time series dataframe: ", df.head())
         return df
 
 def prepare_testing_data_for_2_weeks_forecasting(target_date, current_start_day, current_prediction_output_folder):
@@ -211,15 +198,9 @@ def prepare_testing_data_for_2_weeks_forecasting(target_date, current_start_day,
 # 'Nearest_18', 'Nearest_19', 'Nearest_20', 'Nearest_21', 'Nearest_22',
 
 # 'Nearest_23', 'Nearest_24',], axis=1)
-  X = df.drop([target_col, 'LAT', 'LON'], axis=1)
+  X = df.drop([target_col], axis=1)
   y = df[target_col]
   return X, y
-  
-
-
-# target column is current day's FRP, previous days' FRP and all the other columns are inputs
-
-#read_original_txt_files()
 
 if __name__ == "__main__":
   #training_end_date = "20200715"

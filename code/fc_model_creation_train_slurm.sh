@@ -18,6 +18,7 @@ cat > ${SCRIPT_NAME} << EOF
 #SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file`
 #SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file`
 
+
 # Activate your customized virtual environment
 source /home/zsun/anaconda3/bin/activate
 
@@ -28,7 +29,7 @@ from fc_model_creation import train_model
 # Define your start and end dates as strings
 start_date_str = "20200109"
 end_date_str = "20201231"
-training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_with_yunyao_window_data_time_series_landuse_vhi/"
+training_data_folder = "/groups/ESS3/zsun/firecasting/data/train/all_cells_new_with_yunyao_window_data_time_series_landuse_vhi_latlon/"
 # all_cells_new_6 - this training will not use weight. Directly train the model on all rows because we already filterred out the non-fire cells.
 train_model(start_date_str, end_date_str, training_data_folder)
 print("all training on {training_data_folder} is done")
